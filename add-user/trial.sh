@@ -43,6 +43,8 @@ domain=$(cat /usr/local/etc/xray/domain)
 else
 domain=$IP
 fi
+PUB=$(cat /etc/slowdns/server.pub)
+NS=$(cat /etc/xray/dns)
 ssl="$(cat ~/log-install.txt | grep -w "Stunnel4" | cut -d: -f2)"
 sqd="$(cat ~/log-install.txt | grep -w "Squid" | cut -d: -f2)"
 ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
@@ -82,6 +84,8 @@ echo -e "Password       : $Pass"
 echo -e "\e[$line═════════════════════════════════\e[m"
 echo -e "Domain         : $domain"
 echo -e "IP/Host        : $MYIP"
+echo -e "Open        : 22"
+echo -e "OpenSSH        : $PUB"
 echo -e "OpenSSH        : 22"
 echo -e "Dropbear       : 442, 109"
 echo -e "SSL/TLS        :$ssl"
