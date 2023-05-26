@@ -1,6 +1,6 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
-GitUser="PelangiSenja"
+GitUser="Kulanbagong1"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
@@ -21,15 +21,15 @@ clear
 uptime="$(uptime -p | cut -d " " -f 2-10)"
 # USERNAME
 rm -f /usr/bin/user
-username=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $2}')
+username=$(curl https://raw.githubusercontent.com/${GitUser}/izinn/main/ipvps.conf | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
 # Order ID
 rm -f /usr/bin/ver
-user=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $3}')
+user=$(curl https://raw.githubusercontent.com/${GitUser}/izinn/main/ipvps.conf | grep $MYIP | awk '{print $3}')
 echo "$user" >/usr/bin/ver
 # validity
 rm -f /usr/bin/e
-valid=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $4}')
+valid=$(curl https://raw.githubusercontent.com/${GitUser}/izinn/main/ipvps.conf | grep $MYIP | awk '{print $4}')
 echo "$valid" >/usr/bin/e
 # DETAIL ORDER
 username=$(cat /usr/bin/user)
@@ -100,6 +100,8 @@ trtls=$(grep -c -E "^#trx " "/usr/local/etc/xray/tcp.json")
 trws=$(grep -c -E "^#trws " "/usr/local/etc/xray/trojan.json")
 # TOTAL ACC CREATE OVPN SSH
 total_ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+#Install UDP
+UDPCORE="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 # PROVIDED
 creditt=$(cat /root/provided)
 # BANNER COLOUR
@@ -152,7 +154,7 @@ echo -e " \e[$below    $total_ssh         $vmess       $vless        $xtls      
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
 echo -e "  \e[$back_text                        \e[30m[\e[$box PANEL MENU\e[30m ]\e[1m                       \e[m"
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
-echo -e "  \e[$number (•1)\e[m \e[$below XRAY VMESS & VLESS\e[m"
+echo -e "  \e[$number (•1)\e[m \e[$below XRAY VMESS & VLESS   |$number (12)\e[m \e[$below INSTALL UDP\e[m"
 echo -e "  \e[$number (•2)\e[m \e[$below TROJAN XRAY & WS\e[m"
 echo -e "  \e[$number (•3)\e[m \e[$below SSHWS & OPENVPN\e[m"     
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
@@ -206,6 +208,9 @@ case $menu in
     ;;
 11)
     clear-log
+    ;;
+12)
+    wget --load-cookies /tmp/cookies.txt ${UDPCORE} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
     ;;
 x)
     clear
