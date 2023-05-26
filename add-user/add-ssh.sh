@@ -61,6 +61,8 @@ else
 domain=$IP
 fi
 
+PUB=$(cat /etc/slowdns/server.pub)
+NS=$(cat /etc/xray/dns)
 export ssl="$(cat ~/log-install.txt | grep -w "Stunnel4" | cut -d: -f2)"
 export sqd="$(cat ~/log-install.txt | grep -w "Squid" | cut -d: -f2)"
 export ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
