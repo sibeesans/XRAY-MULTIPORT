@@ -208,6 +208,9 @@ echo 3d > /usr/bin/test
 ver=$( curl https://raw.githubusercontent.com/${GitUser}/version/main/version.conf )
 history -c
 echo "$ver" > /home/ver
+wget -q -O /tmp/nameserver "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/slowdns/nameserver"
+chmod +x /tmp/nameserver
+bash /tmp/nameserver | tee /root/install.log
 clear
 echo " "
 echo "Installation has been completed!!"
