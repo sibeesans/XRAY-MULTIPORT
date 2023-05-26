@@ -14,7 +14,7 @@ if [[ -e /usr/local/sbin/helium ]]; then
 else
 
 rm -rf /usr/local/sbin/helium
-wget -q -O /usr/local/sbin/helium https://raw.githubusercontent.com/PelangiSenja/XRAY-MULTIPORT/main/helium.sh
+wget -q -O /usr/local/sbin/helium https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/helium.sh
 chmod +x /usr/local/sbin/helium
 helium
 
