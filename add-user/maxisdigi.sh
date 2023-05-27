@@ -79,8 +79,8 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
-patchtls=/pelangisenja-vmesswstls
-patchnontls=/pelangisenja-vmesswsntls
+patchtls=/jengkolonline-vmesswstls
+patchnontls=/jengkolonline-vmesswsntls
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "   Bug Address (Example: www.google.com) : " address
 read -p "   Bug SNI/Host (Example : m.facebook.com) : " sni
@@ -221,8 +221,8 @@ exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
 # Make Random Username 
 user=Trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 
-patchtls=/pelangisenja-vmesswstls
-patchnontls=/pelangisenja-vmesswsntls
+patchtls=/jengkolonline-vmesswstls
+patchnontls=/jengkolonline-vmesswsntls
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "   Bug Address (Example: www.google.com) : " address
 read -p "   Bug SNI/Host (Example : m.facebook.com) : " sni
@@ -373,8 +373,8 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vms " "/usr/local/etc/xray/vmess.json")
 			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 		fi
 	done
-patchtls=/pelangisenja-vmesswstls
-patchnontls=/pelangisenja-vmesswsntls
+patchtls=/jengkolonline-vmesswstls
+patchnontls=/jengkolonline-vmesswsntls
 user=$(grep -E "^#vms " "/usr/local/etc/xray/vmess.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 harini=$(grep -E "^#vms " "/usr/local/etc/xray/vmess.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#vms " "/usr/local/etc/xray/vmess.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
@@ -502,8 +502,8 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
-patchtls=/pelangisenja-vlesswstls
-patchnontls=/pelangisenja-vlesswsntls
+patchtls=/jengkolonline-vlesswstls
+patchnontls=/jengkolonline-vlesswsntls
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "   Bug Address (Example: www.google.com) : " address
 read -p "   Bug SNI/Host (Example : m.facebook.com) : " sni
@@ -579,8 +579,8 @@ exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
 # Make Random Username 
 user=Trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 
-patchtls=/pelangisenja-vlesswstls
-patchnontls=/pelangisenja-vlesswsntls
+patchtls=/jengkolonline-vlesswstls
+patchnontls=/jengkolonline-vlesswsntls
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "   Bug Address (Example: www.google.com) : " address
 read -p "   Bug SNI/Host (Example : m.facebook.com) : " sni
@@ -668,8 +668,8 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vls " "/usr/local/etc/xray/vless.json")
 			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 		fi
 	done
-patchtls=/pelangisenja-vlesswstls
-patchnontls=/pelangisenja-vlesswsntls
+patchtls=/jengkolonline-vlesswstls
+patchnontls=/jengkolonline-vlesswsntls
 user=$(grep -E "^#vls " "/usr/local/etc/xray/vless.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 harini=$(grep -E "^#vls " "/usr/local/etc/xray/vless.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#vls " "/usr/local/etc/xray/vless.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
@@ -733,8 +733,8 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
-patchtls=/pelangisenja-trojanwstls
-patchnone=/pelangisenja-trojanwsntls
+patchtls=/jengkolonline-trojanwstls
+patchnone=/jengkolonline-trojanwsntls
 read -p "   Bug Address (Example: www.google.com) : " address
 read -p "   Bug SNI (Example : m.facebook.com) : " sni
 read -p "   Expired (days) : " masaaktif
@@ -806,8 +806,8 @@ exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
 # Make Random Username 
 user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 
-patchtls=/pelangisenja-trojanwstls
-patchnone=/pelangisenja-trojanwsntls
+patchtls=/jengkolonline-trojanwstls
+patchnone=/jengkolonline-trojanwsntls
 read -p "   Bug Address (Example: www.google.com) : " address
 read -p "   Bug SNI (Example : m.facebook.com) : " sni
 bug_addr=${address}.
@@ -886,8 +886,8 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#trws " "/usr/local/etc/xray/trojan.json")
 			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 		fi
 	done
-patchtls=/pelangisenja-trojanwstls
-patchnone=/pelangisenja-trojanwsntls
+patchtls=/jengkolonline-trojanwstls
+patchnone=/jengkolonline-trojanwsntls
 user=$(grep -E "^#trws " "/usr/local/etc/xray/trojan.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 harini=$(grep -E "^#trws " "/usr/local/etc/xray/trojan.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#trws " "/usr/local/etc/xray/trojan.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
