@@ -253,6 +253,7 @@ echo "   - Xray Trojan Tcp Tls     : 443"  | tee -a log-install.txt
 echo "   - Xray Vmess Ws None Tls  : 80"  | tee -a log-install.txt
 echo "   - Xray Vless Ws None Tls  : 80"  | tee -a log-install.txt
 echo "   - Xray Trojan Ws None Tls : 80"  | tee -a log-install.txt
+echo "   - Wireguard              : 7070"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "    [INFORMASI CLASH FOR ANDROID (YAML)]"  | tee -a log-install.txt
 echo "    -----------------------------------" | tee -a log-install.txt
@@ -275,13 +276,13 @@ echo "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
-echo -e "\e[1;32m══════════════════Autoscript By PelangiSenja══════════════════\e[0m" | tee -a log-install.txt
+echo -e "\e[1;32m══════════════════Autoscript By JengkolOnline══════════════════\e[0m" | tee -a log-install.txt
 sleep 7
 clear
 echo ""
 echo -e "    \e[1;32m.------------------------------------------.\e[0m"
 echo -e "    \e[1;32m|     SUCCESFULLY INSTALLED THE SCRIPT     |\e[0m"
-echo -e "    \e[1;32m|         PREMIUM BY pelangisenja          |\e[0m"
+echo -e "    \e[1;32m|         PREMIUM BY JengkolOnline          |\e[0m"
 echo -e "    \e[1;32m'------------------------------------------'\e[0m"
 echo ""
 echo -e "   \e[1;32mYour VPS Will Be Automatical Reboot In 5 seconds\e[0m"
