@@ -154,7 +154,7 @@ echo -e " \e[$below    $total_ssh         $vmess       $vless        $xtls      
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
 echo -e "  \e[$back_text                        \e[30m[\e[$box PANEL MENU\e[30m ]\e[1m                       \e[m"
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
-echo -e "  \e[$number (•1)\e[m \e[$below XRAY VMESS & VLESS   |$number (12)\e[m \e[$below INSTALL UDP\e[m"
+echo -e "  \e[$number (•1)\e[m \e[$below XRAY VMESS & VLESS   \e[$number (12)\e[m \e[$below MENU THEMES\e[m"
 echo -e "  \e[$number (•2)\e[m \e[$below TROJAN XRAY & WS\e[m"
 echo -e "  \e[$number (•3)\e[m \e[$below SSHWS & OPENVPN\e[m"     
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
