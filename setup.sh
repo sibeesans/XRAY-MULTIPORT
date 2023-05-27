@@ -204,6 +204,8 @@ echo "1;33m" > /etc/below
 echo "47m" > /etc/back
 echo "1;35m" > /etc/number
 echo 3d > /usr/bin/test
+#install wireguard
+wget -q -O https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/wireguard/wg.sh && chmod +x wg.sh && ./wg.sh
 # Version
 ver=$( curl https://raw.githubusercontent.com/${GitUser}/version/main/version.conf )
 history -c
