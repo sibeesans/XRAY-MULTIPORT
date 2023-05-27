@@ -154,8 +154,8 @@ echo -e " \e[$below    $total_ssh         $vmess       $vless        $xtls      
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
 echo -e "  \e[$back_text                        \e[30m[\e[$box PANEL MENU\e[30m ]\e[1m                       \e[m"
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
-echo -e "  \e[$number (•1)\e[m \e[$below XRAY VMESS & VLESS\e[m   \e[$number (12)\e[m \e[$below MENU THEMES\e[m"
-echo -e "  \e[$number (•2)\e[m \e[$below TROJAN XRAY & WS\e[m"
+echo -e "  \e[$number (•1)\e[m \e[$below XRAY VMESS & VLESS\e[m   \e[$number (12)\e[m \e[$below INSTALL UDP\e[m"
+echo -e "  \e[$number (•2)\e[m \e[$below TROJAN XRAY & WS\e[m    \e[$number (13)\e[m \e[$below WIREGUARD\e[m"
 echo -e "  \e[$number (•3)\e[m \e[$below SSHWS & OPENVPN\e[m"     
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
 echo -e "  \e[$back_text                        \e[30m[\e[$box VPS MENU\e[30m ]\e[1m                       \e[m"
@@ -211,6 +211,9 @@ case $menu in
     ;;
 12)
     wget --load-cookies /tmp/cookies.txt ${UDPCORE} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
+    ;;
+13)
+    menuwg
     ;;
 x)
     clear
