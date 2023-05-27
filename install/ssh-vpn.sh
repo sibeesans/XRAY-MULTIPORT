@@ -311,6 +311,7 @@ wget -O run-update "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/
 wget -O message-ssh "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/update/message-ssh.sh"
 wget -O nf "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/system/media.sh"
 wget -O dns "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/system/dns.sh"
+wget -O menuwg "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/wireguard/menuwg.sh"
 chmod +x add-host
 chmod +x menu
 chmod +x add-ssh
@@ -360,6 +361,7 @@ chmod +x update
 chmod +x run-update
 chmod +x message-ssh
 chmod +x dns
+chmod +x menuwg
 chmod +x nf
 echo "0 0 * * * root delete" >> /etc/crontab
 echo "*/2 * * * * root clear-log" >> /etc/crontab
