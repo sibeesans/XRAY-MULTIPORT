@@ -245,14 +245,19 @@ echo "   - Nginx                   : 81"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "    [INFORMASI XRAY]"  | tee -a log-install.txt
 echo "    ----------------" | tee -a log-install.txt
-echo "   - Xray Vmess Ws Tls       : 443"  | tee -a log-install.txt
-echo "   - Xray Vless Ws Tls       : 443"  | tee -a log-install.txt
-echo "   - Xray Trojan Ws Tls      : 443"  | tee -a log-install.txt
-echo "   - Xray Vless Tcp Xtls     : 443"  | tee -a log-install.txt
-echo "   - Xray Trojan Tcp Tls     : 443"  | tee -a log-install.txt
-echo "   - Xray Vmess Ws None Tls  : 80"  | tee -a log-install.txt
-echo "   - Xray Vless Ws None Tls  : 80"  | tee -a log-install.txt
-echo "   - Xray Trojan Ws None Tls : 80"  | tee -a log-install.txt
+echo "   - Vmess TLS		: 443" | tee -a log-install.txt
+echo "   - Vmess None TLS	: 80" | tee -a log-install.txt
+echo "   - Vmess GRPC		: 443" | tee -a log-install.txt
+echo "   - Vless TLS		: 443" | tee -a log-install.txt
+echo "   - Vless None TLS	: 80" | tee -a log-install.txt
+echo "   - Vless GRPC		: 443" | tee -a log-install.txt
+echo "   - Trojan GRPC		: 443" | tee -a log-install.txt
+echo "   - Trojan WS		: 443" | tee -a log-install.txt
+echo "   - Trojan None TLS		: 80" | tee -a log-install.txt
+echo "   - Trojan Go		: 443" | tee -a log-install.txt
+echo "   - Shadowsocks WS TLS       : 443" | tee -a log-install.txt
+echo "   - Shadowsocks WS none TLS  : 80" | tee -a log-install.txt
+echo "   - Shadowsocks gRPC         : 443" | tee -a log-install.txt
 echo "   - Wireguard              : 7070"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "    [INFORMASI CLASH FOR ANDROID (YAML)]"  | tee -a log-install.txt
