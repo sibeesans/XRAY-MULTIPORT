@@ -695,6 +695,14 @@ wget -O cektrgo "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/mai
 wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/change-port/port-xray.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/cert.sh"
 
+# menu
+wget -O vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xray/vmess.sh" && chmod +x vmess
+wget -O trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xray/trojan.sh" && chmod +x trojan
+wget -O vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xray/vless.sh" && chmod +x vless
+wget -O trojango "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xray/trojango.sh" && chmod +x trojango
+wget -O sowdowsok "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/sowdowsok.sh" && chmod +x sowdowsok 
+
+
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "xray/Vmess"
