@@ -278,7 +278,7 @@ echo -e ""
 echo -e "\e[1;33mSTATUS XRAY:\e[0m"
 echo -e "\e[0;34m-------------\e[0m"
 
-status="$(systemctl status xray)"
+status="$(systemctl show xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -287,7 +287,7 @@ else
 echo -e " Vless Tcp Xtls     : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl status xray)"
+status="$(systemctl show xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -296,7 +296,7 @@ else
 echo -e " Trojan Tcp tls     : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl status xray)"
+status="$(systemctl show xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -305,7 +305,7 @@ else
 echo -e " Vless Ws Tls       : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl status xray)"
+status="$(systemctl show xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -314,7 +314,7 @@ else
 echo -e " Vmess Ws Tls       : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl status xray)"
+status="$(systemctl show xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -323,7 +323,7 @@ else
 echo -e " Trojan Ws Tls      : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl status xray)"
+status="$(systemctl show xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -332,7 +332,7 @@ else
 echo -e " Vless Ws None      : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl status xray)"
+status="$(systemctl show xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -341,7 +341,7 @@ else
 echo -e " Vmess Ws None      : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl status xray)"
+status="$(systemctl show xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -350,7 +350,7 @@ else
 echo -e " Trojan Ws None     : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl status xray)"
+status="$(systemctl show xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
