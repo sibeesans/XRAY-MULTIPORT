@@ -278,76 +278,85 @@ echo -e ""
 echo -e "\e[1;33mSTATUS XRAY:\e[0m"
 echo -e "\e[0;34m-------------\e[0m"
 
-status="$(systemctl show xray@none.service --no-page)"
+status="$(systemctl status xray)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Xray Vless Tcp Xtls     : "$green"running"$NC" ✓"
+echo -e " Vless Tcp Xtls     : "$green"running"$NC" ✓"
 else
-echo -e " Xray Vless Tcp Xtls     : "$red"not running (Error)"$NC" "
+echo -e " Vless Tcp Xtls     : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray@tcp.service --no-page)"
+status="$(systemctl status xray)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Xray Trojan Tcp tls     : "$green"running"$NC" ✓"
+echo -e " Trojan Tcp tls     : "$green"running"$NC" ✓"
 else
-echo -e " Xray Trojan Tcp tls     : "$red"not running (Error)"$NC" "
+echo -e " Trojan Tcp tls     : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray@vless.service --no-page)"
+status="$(systemctl status xray)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Xray Vless Ws Tls       : "$green"running"$NC" ✓"
+echo -e " Vless Ws Tls       : "$green"running"$NC" ✓"
 else
-echo -e " Xray Vless Ws Tls       : "$red"not running (Error)"$NC" "
+echo -e " Vless Ws Tls       : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray@vmess.service --no-page)"
+status="$(systemctl status xray)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Xray Vmess Ws Tls       : "$green"running"$NC" ✓"
+echo -e " Vmess Ws Tls       : "$green"running"$NC" ✓"
 else
-echo -e " Xray Vmess Ws Tls       : "$red"not running (Error)"$NC" "
+echo -e " Vmess Ws Tls       : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray@trojan.service --no-page)"
+status="$(systemctl status xray)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Xray Trojan Ws Tls      : "$green"running"$NC" ✓"
+echo -e " Trojan Ws Tls      : "$green"running"$NC" ✓"
 else
-echo -e " Xray Trojan Ws Tls      : "$red"not running (Error)"$NC" "
+echo -e " Trojan Ws Tls      : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray@vlessnone.service --no-page)"
+status="$(systemctl status xray)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Xray Vless Ws None      : "$green"running"$NC" ✓"
+echo -e " Vless Ws None      : "$green"running"$NC" ✓"
 else
-echo -e " Xray Vless Ws None      : "$red"not running (Error)"$NC" "
+echo -e " Vless Ws None      : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray@vmessnone.service --no-page)"
+status="$(systemctl status xray)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Xray Vmess Ws None      : "$green"running"$NC" ✓"
+echo -e " Vmess Ws None      : "$green"running"$NC" ✓"
 else
-echo -e " Xray Vmess Ws None      : "$red"not running (Error)"$NC" "
+echo -e " Vmess Ws None      : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray@trojannone.service --no-page)"
+status="$(systemctl status xray)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Xray Trojan Ws None     : "$green"running"$NC" ✓"
+echo -e " Trojan Ws None     : "$green"running"$NC" ✓"
 else
-echo -e " Xray Trojan Ws None     : "$red"not running (Error)"$NC" "
+echo -e " Trojan Ws None     : "$red"not running (Error)"$NC" "
+fi
+
+status="$(systemctl status xray)"
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+if [ "${status_text}" == "active" ]
+then
+echo -e " Sowdowsok Ws None     : "$green"running"$NC" ✓"
+else
+echo -e " Sowdowsok Ws None     : "$red"not running (Error)"$NC" "
 fi
 
 echo -e ""
