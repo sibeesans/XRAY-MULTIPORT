@@ -113,8 +113,9 @@ else
     status_xray="${RED}OFF${NC}"
 fi
 
-haproxy=$( systemctl status haproxy | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $xray == "running" ]]; then
+status="$(systemctl show ws-http.service --no-page)"
+status_http=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+if [[ $status_http == "running" ]]; then
     status_haproxy="${GREEN}ON${NC}"
 else
     status_haproxy="${RED}OFF${NC}"
@@ -169,7 +170,7 @@ echo -e "  \e[$text Download\e[0m   \e[${text}   $dtoday    $dyest       $dmon  
 echo -e "  \e[$text Upload\e[0m     \e[${text}   $utoday    $uyest       $umon   \e[0m"
 echo -e "  \e[$text Total\e[0m       \e[${text}  $ttoday    $tyest       $tmon  \e[0m "
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
-echo -e "  ${Blue}XRAY${NC}: [ ${status_xray} ]     ${Blue}NGINX${NC}: [ ${status_nginx} ${NC} ]   ${Blue}HAPROXY${NC}: [ ${status_haproxy} ${NC}]"
+echo -e "  ${Blue}XRAY${NC}: [ ${status_xray} ]     ${Blue}NGINX${NC}: [ ${status_nginx} ${NC} ]   ${Blue}HTTP&HTTPS${NC}: [ ${status_haproxy} ${NC}]"
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
 echo -e "  \e[$back_text                        \e[30m[\e[$box PANEL MENU\e[30m ]\e[1m                       \e[m"
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
