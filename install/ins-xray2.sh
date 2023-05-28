@@ -691,6 +691,9 @@ wget -O deltrgo "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/mai
 wget -O renewtrgo "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xray/renewtrgo.sh" && chmod +x renewtrgo
 wget -O cektrgo "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xray/cektrgo.sh" && chmod +x cektrgo
 
+#Prot
+wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/change-port/port-xray.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/cert.sh"
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
