@@ -104,8 +104,9 @@ else
     status_nginx="${RED}OFF${NC}"
 fi
 
-xray=$( systemctl status xray | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $xray == "running" ]]; then
+status="$(systemctl status xray)"
+status_xray=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+if [[ $status_xray == "running" ]]; then
     status_xray="${GREEN}ON${NC}"
 else
     status_xray="${RED}OFF${NC}"
