@@ -90,8 +90,8 @@ export patchtls=/pelangisenja-vmesswstls
 export patchnontls=/pelangisenja-vmesswsntls
 export uuid=$(cat /proc/sys/kernel/random/uuid)
 
-read -p "   Bug Address (Example: www.google.com) : " address
-read -p "   Bug SNI/Host (Example : m.facebook.com) : " sni
+#read -p "   Bug Address (Example: www.google.com) : " address
+#read -p "   Bug SNI/Host (Example : m.facebook.com) : " sni
 read -p "   Expired (days) : " masaaktif
 
 bug_addr=${address}.
