@@ -112,9 +112,11 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
+wget -O menuwg "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/wireguard/menuwg.sh"
 wget -O addwg "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/wireguard/addwg.sh"
 wget -O delwg "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/wireguard/delwg.sh"
 wget -O renewwg "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/wireguard/renewwg.sh"
+chmod +x menuwg
 chmod +x addwg
 chmod +x delwg
 chmod +x renewwg
