@@ -97,8 +97,9 @@ clear
 d1=$(date -d "$valid" +%s)
 d2=$(date -d "$today" +%s)
 certifacate=$(((d1 - d2) / 86400))
-nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $nginx == "running" ]]; then
+status="$(systemctl show nginx.service --no-page)"
+status_nginx=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+if [[ $status_nginx == "running" ]]; then
     status_nginx="${GREEN}ON${NC}"
 else
     status_nginx="${RED}OFF${NC}"
