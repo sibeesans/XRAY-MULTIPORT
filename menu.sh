@@ -39,6 +39,15 @@ clear
 version=$(cat /home/ver)
 ver=$( curl https://raw.githubusercontent.com/${GitUser}/version/main/version.conf )
 clear
+# Warna
+RED='\033[0;31m'
+NC='\e[0m'
+gray="\e[1;30m"
+Blue="\033[1;36m"
+GREEN='\033[0;32m'
+grenbo="\033[1;95m"
+YELL='\033[1;33m'
+BGX="\033[42m"
 # CEK UPDATE
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info1="${Green_font_prefix}($version)${Font_color_suffix}"
@@ -88,18 +97,27 @@ clear
 d1=$(date -d "$valid" +%s)
 d2=$(date -d "$today" +%s)
 certifacate=$(((d1 - d2) / 86400))
-# TOTAL ACC CREATE VMESS WS
-vmess=$(grep -c -E "^#vms " "/usr/local/etc/xray/vmess.json")
-# TOTAL ACC CREATE  VLESS WS
-vless=$(grep -c -E "^#vls " "/usr/local/etc/xray/vless.json")
-# TOTAL ACC CREATE  VLESS TCP XTLS
-xtls=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
-# TOTAL ACC CREATE  TROJAN
-trtls=$(grep -c -E "^#trx " "/usr/local/etc/xray/tcp.json")
-# TOTAL ACC CREATE  TROJAN WS TLS
-trws=$(grep -c -E "^#trws " "/usr/local/etc/xray/trojan.json")
-# TOTAL ACC CREATE OVPN SSH
-total_ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $nginx == "running" ]]; then
+    status_nginx="${GREEN}ON${NC}"
+else
+    status_nginx="${RED}OFF${NC}"
+fi
+
+xray=$( systemctl status xray | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $xray == "running" ]]; then
+    status_xray="${GREEN}ON${NC}"
+else
+    status_xray="${RED}OFF${NC}"
+fi
+
+haproxy=$( systemctl status haproxy | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $xray == "running" ]]; then
+    status_haproxy="${GREEN}ON${NC}"
+else
+    status_haproxy="${RED}OFF${NC}"
+fi
+
 #Install UDP
 UDPCORE="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 # PROVIDED
@@ -149,8 +167,7 @@ echo -e "  \e[$text Download\e[0m   \e[${text}   $dtoday    $dyest       $dmon  
 echo -e "  \e[$text Upload\e[0m     \e[${text}   $utoday    $uyest       $umon   \e[0m"
 echo -e "  \e[$text Total\e[0m       \e[${text}  $ttoday    $tyest       $tmon  \e[0m "
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
-echo -e " \e[$text Ssh/Ovpn   V2ray   Vless   Vlessxtls   Trojan-Ws   Trojan-Tls \e[0m "    
-echo -e " \e[$below    $total_ssh         $vmess       $vless        $xtls           $trws           $trtls \e[0m "
+echo -e "  ${Blue}XRAY${NC}: [ ${status_xray} ]     ${Blue}NGINX${NC}: [ ${status_nginx} ${NC} ]   ${Blue}HAPROXY${NC}: [ ${status_haproxy} ${NC}]"
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
 echo -e "  \e[$back_text                        \e[30m[\e[$box PANEL MENU\e[30m ]\e[1m                       \e[m"
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
