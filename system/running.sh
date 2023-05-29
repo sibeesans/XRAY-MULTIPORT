@@ -405,6 +405,24 @@ else
 echo -e " Sowdowsok gRPC     : "$red"not running (Error)"$NC" "
 fi
 
+go="$(systemctl status trojan-go | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g')"
+status_text=$(echo "${go}" | grep 'ActiveState=' | cut -f2 -d=)
+if [ "${status_text}" == "active" ]
+then
+echo -e " Trojan Go     : "$green"running"$NC" ✓"
+else
+echo -e " Trojan Go     : "$red"not running (Error)"$NC" "
+fi
+
+wg="$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g')"
+status_text=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)
+if [ "${status_text}" == "active" ]
+then
+echo -e " Trojan Go     : "$green"running"$NC" ✓"
+else
+echo -e " Trojan Go     : "$red"not running (Error)"$NC" "
+fi
+
 echo -e ""
 echo -e "\e[1;33mSTATUS NGINX & SQUID:\e[0m"
 echo -e "\e[0;34m--------------------\e[0m"
