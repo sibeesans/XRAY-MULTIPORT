@@ -644,17 +644,51 @@ systemctl daemon-reload
 sleep 1
 echo -e "[ ${green}ok${NC} ] Enable & restart xray "
 systemctl daemon-reload
+# // ENABLE XRAY TCP XTLS 80/443
+systemctl daemon-reload
 systemctl enable xray.service
 systemctl restart xray.service
-systemctl enable xray
-systemctl restart xray
-systemctl restart nginx
-systemctl enable runn
-systemctl restart runn
-systemctl stop trojan-go
-systemctl start trojan-go
-systemctl enable trojan-go
-systemctl restart trojan-go
+systemctl enable xray@none
+systemctl restart xray@none
+systemctl enable xray@tcp
+systemctl restart xray@tcp
+
+# // ENABLE XRAY WS TLS && NONE TLS
+systemctl enable xray@vless
+systemctl restart xray@vless
+systemctl enable xray@vlessnone
+systemctl restart xray@vlessnone
+systemctl enable xray@vlessgrpc
+systemctl restart xray@vlessgrpc
+
+systemctl enable xray@vmess
+systemctl restart xray@vmess
+systemctl enable xray@vmessnone
+systemctl restart xray@vmessnone
+systemctl enable xray@vmessgrpc
+systemctl restart xray@vmessgrpc
+
+systemctl enable xray@trojan
+systemctl restart xray@trojan
+systemctl enable xray@trojannone
+systemctl restart xray@trojannone
+systemctl enable xray@trojangrpc
+systemctl restart xray@trojangrpc
+
+systemctl enable xray@ss
+systemctl restart xray@ss
+systemctl enable xray@ssnone
+systemctl restart xray@ssnone
+systemctl enable xray@ssgrpc
+systemctl restart xray@ssgrpc
+
+systemctl restart nginx.service
+systemctl enable runn.service
+systemctl restart runn.service
+systemctl stop trojan-go.service
+systemctl start trojan-go.service
+systemctl enable trojan-go.service
+systemctl restart trojan-go.service
 
 cd /usr/bin/
 # vmess
