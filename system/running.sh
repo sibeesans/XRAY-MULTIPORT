@@ -373,36 +373,36 @@ status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Trojan gRPC            : "$green"running"$NC" ✓"
+echo -e " Trojan gRPC             : "$green"running"$NC" ✓"
 else
-echo -e " Trojan gRPC            : "$red"not running (Error)"$NC" "
+echo -e " Trojan gRPC             : "$red"not running (Error)"$NC" "
 fi
 
 status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Sowdowsok Ws None      : "$green"running"$NC" ✓"
+echo -e " Sowdowsok Ws None       : "$green"running"$NC" ✓"
 else
-echo -e " Sowdowsok Ws None      : "$red"not running (Error)"$NC" "
+echo -e " Sowdowsok Ws None       : "$red"not running (Error)"$NC" "
 fi
 
 status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Sowdowsok Ws Tls       : "$green"running"$NC" ✓"
+echo -e " Sowdowsok Ws Tls         : "$green"running"$NC" ✓"
 else
-echo -e " Sowdowsok Ws Tls       : "$red"not running (Error)"$NC" "
+echo -e " Sowdowsok Ws Tls         : "$red"not running (Error)"$NC" "
 fi
 
 status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Sowdowsok gRPC        : "$green"running"$NC" ✓"
+echo -e " Sowdowsok gRPC           : "$green"running"$NC" ✓"
 else
-echo -e " Sowdowsok gRPC        : "$red"not running (Error)"$NC" "
+echo -e " Sowdowsok gRPC           : "$red"not running (Error)"$NC" "
 fi
 
 status="$(systemctl show trojan-go.service --no-page)"
