@@ -648,7 +648,7 @@ systemctl enable xray.service
 systemctl restart xray.service
 systemctl enable xray
 systemctl restart xray
-systemctl restart nginx.service
+systemctl restart nginx
 systemctl enable runn
 systemctl restart runn
 systemctl stop trojan-go
