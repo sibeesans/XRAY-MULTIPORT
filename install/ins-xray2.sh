@@ -682,7 +682,7 @@ systemctl restart xray@ssnone
 systemctl enable xray@ssgrpc
 systemctl restart xray@ssgrpc
 
-systemctl restart nginx.service
+#systemctl restart nginx.service
 systemctl enable runn.service
 systemctl restart runn.service
 systemctl stop trojan-go.service
