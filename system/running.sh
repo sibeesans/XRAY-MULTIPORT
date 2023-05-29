@@ -202,7 +202,7 @@ else
 echo -e " OpenVPN UDP             : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show stunnel4.service --no-page)"
+status="$(/etc/init.d/stunnel5 status --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -211,7 +211,7 @@ else
 echo -e " Stunnel(SSL)            : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show dropbear.service --no-page)"
+status="$(/etc/init.d/dropbear status --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -278,155 +278,155 @@ echo -e ""
 echo -e "\e[1;33mSTATUS XRAY:\e[0m"
 echo -e "\e[0;34m-------------\e[0m"
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Vless Tcp Xtls     : "$green"running"$NC" ✓"
+echo -e " Vless Tcp Xtls          : "$green"running"$NC" ✓"
 else
-echo -e " Vless Tcp Xtls     : "$red"not running (Error)"$NC" "
+echo -e " Vless Tcp Xtls          : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Trojan Tcp tls     : "$green"running"$NC" ✓"
+echo -e " Trojan Tcp tls          : "$green"running"$NC" ✓"
 else
-echo -e " Trojan Tcp tls     : "$red"not running (Error)"$NC" "
+echo -e " Trojan Tcp tls          : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Vless Ws Tls       : "$green"running"$NC" ✓"
+echo -e " Vless Ws Tls            : "$green"running"$NC" ✓"
 else
-echo -e " Vless Ws Tls       : "$red"not running (Error)"$NC" "
+echo -e " Vless Ws Tls            : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Vmess Ws Tls       : "$green"running"$NC" ✓"
+echo -e " Vmess Ws Tls            : "$green"running"$NC" ✓"
 else
-echo -e " Vmess Ws Tls       : "$red"not running (Error)"$NC" "
+echo -e " Vmess Ws Tls            : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Trojan Ws Tls      : "$green"running"$NC" ✓"
+echo -e " Trojan Ws Tls           : "$green"running"$NC" ✓"
 else
-echo -e " Trojan Ws Tls      : "$red"not running (Error)"$NC" "
+echo -e " Trojan Ws Tls           : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Vless Ws None      : "$green"running"$NC" ✓"
+echo -e " Vless Ws None           : "$green"running"$NC" ✓"
 else
-echo -e " Vless Ws None      : "$red"not running (Error)"$NC" "
+echo -e " Vless Ws None           : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Vless gRPC      : "$green"running"$NC" ✓"
+echo -e " Vless gRPC              : "$green"running"$NC" ✓"
 else
-echo -e " Vless gRPC      : "$red"not running (Error)"$NC" "
+echo -e " Vless gRPC              : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Vmess Ws None      : "$green"running"$NC" ✓"
+echo -e " Vmess Ws None           : "$green"running"$NC" ✓"
 else
-echo -e " Vmess Ws None      : "$red"not running (Error)"$NC" "
+echo -e " Vmess Ws None           : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Vmess gRPC      : "$green"running"$NC" ✓"
+echo -e " Vmess gRPC              : "$green"running"$NC" ✓"
 else
-echo -e " Vmess gRPC      : "$red"not running (Error)"$NC" "
+echo -e " Vmess gRPC              : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Trojan Ws None     : "$green"running"$NC" ✓"
+echo -e " Trojan Ws None          : "$green"running"$NC" ✓"
 else
-echo -e " Trojan Ws None     : "$red"not running (Error)"$NC" "
+echo -e " Trojan Ws None          : "$red"not running (Error)"$NC" "
 fi
 
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Trojan gRPC     : "$green"running"$NC" ✓"
+echo -e " Trojan gRPC            : "$green"running"$NC" ✓"
 else
-echo -e " Trojan gRPC     : "$red"not running (Error)"$NC" "
+echo -e " Trojan gRPC            : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Sowdowsok Ws None     : "$green"running"$NC" ✓"
+echo -e " Sowdowsok Ws None      : "$green"running"$NC" ✓"
 else
-echo -e " Sowdowsok Ws None     : "$red"not running (Error)"$NC" "
+echo -e " Sowdowsok Ws None      : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Sowdowsok Ws Tls     : "$green"running"$NC" ✓"
+echo -e " Sowdowsok Ws Tls       : "$green"running"$NC" ✓"
 else
-echo -e " Sowdowsok Ws Tls     : "$red"not running (Error)"$NC" "
+echo -e " Sowdowsok Ws Tls       : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Sowdowsok gRPC     : "$green"running"$NC" ✓"
+echo -e " Sowdowsok gRPC        : "$green"running"$NC" ✓"
 else
-echo -e " Sowdowsok gRPC     : "$red"not running (Error)"$NC" "
+echo -e " Sowdowsok gRPC        : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show trojan-go.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Trojan Go     : "$green"running"$NC" ✓"
+echo -e " Trojan Go               : "$green"running"$NC" ✓"
 else
-echo -e " Trojan Go     : "$red"not running (Error)"$NC" "
+echo -e " Trojan Go               : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show status wg-quick@wg0.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " wireguard     : "$green"running"$NC" ✓"
-else
-echo -e " wireguard     : "$red"not running (Error)"$NC" "
-fi
+#status="$(systemctl show status wg-quick@wg0.service --no-page)"
+#status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+#if [ "${status_text}" == "active" ]
+#then
+#echo -e " wireguard              : "$green"running"$NC" ✓"
+#else
+#echo -e " wireguard              : "$red"not running (Error)"$NC" "
+#fi
 
 echo -e ""
 echo -e "\e[1;33mSTATUS NGINX & SQUID:\e[0m"
 echo -e "\e[0;34m--------------------\e[0m"
-status="$(/etc/init.d/nginx.status --no-page)"
+status="$(/etc/init.d/nginx status --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
