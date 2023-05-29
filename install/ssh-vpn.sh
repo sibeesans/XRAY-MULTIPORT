@@ -139,6 +139,7 @@ apt -y install squid3
 apt -y install squid
 wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
+/etc/init.d/squid restart
 
 # // setting vnstat
 apt -y install vnstat
