@@ -83,14 +83,14 @@ echo "clear" >> .profile
 echo "menu" >> .profile
 
 # // install webserver
-apt -y install nginx
-cd
-rm /etc/nginx/sites-enabled/default
-rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/nginx.conf"
-mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vps.conf"
-/etc/init.d/nginx restart
+#apt -y install nginx
+#cd
+#rm /etc/nginx/sites-enabled/default
+#rm /etc/nginx/sites-available/default
+#wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/nginx.conf"
+#mkdir -p /home/vps/public_html
+#wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vps.conf"
+#/etc/init.d/nginx restart
 
 # // install badvpn
 cd
@@ -165,31 +165,85 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
-# // install stunnel
-apt install stunnel4 -y
-cat > /etc/stunnel/stunnel.conf <<-END
-cert = /etc/stunnel/stunnel.pem
+# Install Stunnel5
+cd /root/
+wget -q "https://raw.githubusercontent.com/PelangiSenja/Blueblue/main/stunnel5.zip"
+unzip stunnel5.zip
+cd /root/stunnel
+chmod +x configure
+./configure
+make
+make install
+cd /root
+rm -r -f stunnel
+rm -f stunnel5.zip
+rm -fr /etc/stunnel5
+mkdir -p /etc/stunnel5
+chmod 644 /etc/stunnel5
+
+# Download Config Stunnel5
+cat > /etc/stunnel5/stunnel5.conf <<-END
+cert = /etc/xray/xray.crt
+key = /etc/xray/xray.key
 client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [dropbear]
-accept = 222
-connect = 127.0.0.1:22
-
-[dropbear]
-accept = 777
+accept = 447
 connect = 127.0.0.1:109
+
+[openssh]
+accept = 777
+connect = 127.0.0.1:22
 
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
 
-[kontol-stunnel]
-accept = 2096
-connect = 127.0.0.1:2091
 END
+
+# Service Stunnel5 systemctl restart stunnel5
+rm -fr /etc/systemd/system/stunnel5.service
+cat > /etc/systemd/system/stunnel5.service << END
+[Unit]
+Description=Stunnel5 Service
+Documentation=https://stunnel.org
+Documentation=https://nekopoi.care
+After=syslog.target network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/stunnel5 /etc/stunnel5/stunnel5.conf
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+END
+
+# Service Stunnel5 /etc/init.d/stunnel5
+rm -fr /etc/init.d/stunnel5
+wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/PelangiSenja/Blueblue/main/stunnel5.init"
+
+# Ubah Izin Akses
+#chmod 600 /etc/stunnel5/stunnel5.pem
+chmod +x /etc/init.d/stunnel5
+cp -r /usr/local/bin/stunnel /usr/local/bin/stunnel5
+#mv /usr/local/bin/stunnel /usr/local/bin/stunnel5
+
+# Remove File
+rm -r -f /usr/local/share/doc/stunnel/
+rm -r -f /usr/local/etc/stunnel/
+rm -f /usr/local/bin/stunnel
+rm -f /usr/local/bin/stunnel3
+rm -f /usr/local/bin/stunnel4
+#rm -f /usr/local/bin/stunnel5
+
+# Restart Stunnel5
+systemctl daemon-reload >/dev/null 2>&1
+systemctl enable stunnel5 >/dev/null 2>&1
+systemctl start stunnel5 >/dev/null 2>&1
+systemctl restart stunnel5 >/dev/null 2>&1
 
 # // make a certificate
 openssl genrsa -out key.pem 2048
@@ -389,14 +443,14 @@ apt autoremove -y
 # // finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
-/etc/init.d/nginx restart
+#/etc/init.d/nginx restart
 /etc/init.d/openvpn restart
 /etc/init.d/cron restart
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
 /etc/init.d/fail2ban restart
 /etc/init.d/vnstat restart
-/etc/init.d/stunnel4 restart
+/etc/init.d/stunnel5 restart
 /etc/init.d/squid restart
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
