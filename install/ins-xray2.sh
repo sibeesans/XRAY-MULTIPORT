@@ -644,6 +644,8 @@ systemctl daemon-reload
 sleep 1
 echo -e "[ ${green}ok${NC} ] Enable & restart xray "
 systemctl daemon-reload
+systemctl enable xray.service
+systemctl restart xray.service
 systemctl enable xray
 systemctl restart xray
 systemctl restart nginx
