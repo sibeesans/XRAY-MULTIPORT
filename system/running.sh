@@ -202,7 +202,7 @@ else
 echo -e " OpenVPN UDP             : "$red"not running (Error)"$NC" "
 fi
 
-status="$(/etc/init.d/stunnel4 --no-page)"
+status="$(/etc/init.d/stunnel4.status --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -211,7 +211,7 @@ else
 echo -e " Stunnel(SSL)            : "$red"not running (Error)"$NC" "
 fi
 
-status="$(/etc/init.d/dropbear --no-page)"
+status="$(/etc/init.d/dropbear.status --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -426,7 +426,7 @@ fi
 echo -e ""
 echo -e "\e[1;33mSTATUS NGINX & SQUID:\e[0m"
 echo -e "\e[0;34m--------------------\e[0m"
-status="$(/etc/init.d/nginx --no-page)"
+status="$(/etc/init.d/nginx.status --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
