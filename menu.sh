@@ -97,29 +97,6 @@ clear
 d1=$(date -d "$valid" +%s)
 d2=$(date -d "$today" +%s)
 certifacate=$(((d1 - d2) / 86400))
-status="$(systemctl show nginx.service --no-page)"
-status_nginx=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [[ $status_nginx == "running" ]]; then
-    status_nginx="${GREEN}ON${NC}"
-else
-    status_nginx="${RED}OFF${NC}"
-fi
-
-status="$(systemctl status xray)"
-status_xray=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [[ $status_xray == "running" ]]; then
-    status_xray="${GREEN}ON${NC}"
-else
-    status_xray="${RED}OFF${NC}"
-fi
-
-status="$(systemctl show ws-http.service --no-page)"
-status_http=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [[ $status_http == "running" ]]; then
-    status_haproxy="${GREEN}ON${NC}"
-else
-    status_haproxy="${RED}OFF${NC}"
-fi
 
 #Install UDP
 UDPCORE="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
@@ -170,7 +147,7 @@ echo -e "  \e[$text Download\e[0m   \e[${text}   $dtoday    $dyest       $dmon  
 echo -e "  \e[$text Upload\e[0m     \e[${text}   $utoday    $uyest       $umon   \e[0m"
 echo -e "  \e[$text Total\e[0m       \e[${text}  $ttoday    $tyest       $tmon  \e[0m "
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
-echo -e "  ${Blue}XRAY${NC}: [ ${status_xray} ]     ${Blue}NGINX${NC}: [ ${status_nginx} ${NC} ]   ${Blue}HTTP&HTTPS${NC}: [ ${status_haproxy} ${NC}]"
+#echo -e "  ${Blue}XRAY${NC}: [ ${status_xray} ]     ${Blue}NGINX${NC}: [ ${status_nginx} ${NC} ]   ${Blue}HTTP&HTTPS${NC}: [ ${status_haproxy} ${NC}]"
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
 echo -e "  \e[$back_text                        \e[30m[\e[$box PANEL MENU\e[30m ]\e[1m                       \e[m"
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
