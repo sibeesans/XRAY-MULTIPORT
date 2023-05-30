@@ -5,7 +5,7 @@ GitUser="Kulanbagong1"
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
 #Domain
-domain=$(cat /usr/local/etc/xray/domain)
+domain=$(cat /etc/xray/domain)
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10)
 CITY=$(curl -s ipinfo.io/city)
 WKT=$(curl -s ipinfo.io/timezone)
