@@ -207,7 +207,7 @@ mv xray /usr/local/bin/xray
 chmod +x /usr/local/bin/xray
 
 # xray config
-cat <<EOF> /etc/xray/config.json
+cat> /usr/local/etc/xray/config.json << END
 {
   "log" : {
     "access": "/var/log/xray/access.log",
@@ -597,7 +597,8 @@ cat <<EOF> /etc/xray/config.json
     }
   }
 }
-EOF
+END
+
 # Installing Xray Service
 rm -fr /etc/systemd/system/xray.service.d
 rm -fr /etc/systemd/system/xray.service
@@ -901,4 +902,4 @@ rm -f ins-xray.sh
 mv /root/domain /usr/local/etc/xray/domain
 cp /usr/local/etc/xray/domain /etc/xray/domain
 sleep 1
-clear;
+clear
