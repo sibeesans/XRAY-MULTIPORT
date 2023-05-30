@@ -237,7 +237,7 @@ rm -r -f /usr/local/etc/stunnel/
 rm -f /usr/local/bin/stunnel
 rm -f /usr/local/bin/stunnel3
 rm -f /usr/local/bin/stunnel4
-#rm -f /usr/local/bin/stunnel5
+rm -f /usr/local/bin/stunnel5
 
 # Restart Stunnel5
 systemctl daemon-reload >/dev/null 2>&1
@@ -252,10 +252,10 @@ openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 
 # // konfigurasi stunnel
-sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-/lib/systemd/systemd-sysv-install enable stunnel4
-systemctl start stunnel4
-/etc/init.d/stunnel4 restart
+sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel5
+/lib/systemd/systemd-sysv-install enable stunnel5
+systemctl start stunnel5
+/etc/init.d/stunnel5 restart
 
 # // OpenVPN
 wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
