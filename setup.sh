@@ -152,7 +152,7 @@ clear
 #install Xray
 echo -e "\e[0;32mINSTALLING XRAY CORE...\e[0m"
 sleep 1
-wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/install/ins-xray3.sh && chmod +x ins-xray3.sh && screen -S ins-xray3 ./ins-xray3.sh
+wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/install/ins-xray3.sh && chmod +x ins-xray.sh && screen -S ins-xray ./ins-xray.sh
 echo -e "\e[0;32mDONE INSTALLING XRAY CORE\e[0m"
 clear
 #install ohp-server
@@ -175,11 +175,11 @@ wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/install/se
 echo -e "\e[0;32mDONE INSTALLING SET-BR...\e[0m"
 clear
 #install wireguard 
-echo -e "\e[0;32mINSTALLING WIREGUARD...\e[0m"
-sleep 1
-wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/wireguard/wg.sh && chmod +x wg.sh && ./wg.sh
-echo -e "\e[0;32mDONE INSTALLING...\e[0m"
-clear
+#echo -e "\e[0;32mINSTALLING WIREGUARD...\e[0m"
+#sleep 1
+#wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/wireguard/wg.sh && chmod +x wg.sh && ./wg.sh
+#echo -e "\e[0;32mDONE INSTALLING...\e[0m"
+#clear
 # set time GMT +8
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 # install clouflare JQ
@@ -195,7 +195,7 @@ wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/${GitUser}
 /etc/init.d/nginx restart
 #finish
 rm -f /root/ssh-vpn.sh
-rm -f /root/ins-xray3.sh
+rm -f /root/ins-xray.sh
 rm -f /root/ohp.sh
 rm -f /root/ohp-dropbear.sh
 rm -f /root/ohp-ssh.sh
@@ -271,7 +271,7 @@ echo "   - Shadowsocks 2022 GRPC   : 443" | tee -a log-install.txt
 echo "   - Shadowsocks5 TLS        : 443" | tee -a log-install.txt
 echo "   - Shadowsocks5 none TLS   : 80" | tee -a log-install.txt
 echo "   - Shadowsocks5 gRPC       : 443" | tee -a log-install.txt
-echo "   - Wireguard               : 7070"  | tee -a log-install.txt
+#echo "   - Wireguard               : 7070"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "    [INFORMASI CLASH FOR ANDROID (YAML)]"  | tee -a log-install.txt
 echo "    -----------------------------------" | tee -a log-install.txt
