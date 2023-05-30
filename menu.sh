@@ -162,7 +162,7 @@ echo -e "  \e[$number (•9)\e[m \e[$below SYSTEM MENU\e[m          \e[$number (
 echo -e "  \e[$number (10)\e[m \e[$below CHECK RUNNING\e[m        \e[$number (14)\e[m \e[$below RENEW CERT\e[m"
 echo -e "  \e[$number (11)\e[m \e[$below CHANGE PORT\e[m          \e[$number (15)\e[m \e[$below XRAY VERSION\e[m"
 echo -e "  \e[$number (12)\e[m \e[$below REBOOT VPS\e[m           \e[$number (16)\e[m \e[$below CLEAR LOG VPS\e[m"
-echo -e "  \e[$number (17)\e[m \e[$below MENU BUAT SEMUA XRAY\e[m
+echo -e "  \e[$number (17)\e[m \e[$below MENU BUAT SEMUA XRAY\e[m"
 echo -e ""
 echo -e "  \e[$below[Ctrl + C] For exit from main menu\e[m"
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
