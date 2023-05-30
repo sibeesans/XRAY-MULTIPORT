@@ -78,6 +78,8 @@ systemctl restart nginx
 sleep 0.5;
 clear;
 
+# set uuid
+uuid=$(cat /proc/sys/kernel/random/uuid)
 # // JSON All
 cat> /usr/local/etc/xray/config.json << END
 {
