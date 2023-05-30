@@ -154,7 +154,7 @@ echo -e " \e[$line╘═══════════════════�
 echo -e "  \e[$number (•1)\e[m \e[$below SSHWS & OPENVPN\e[m    \e[$number (•5)\e[m \e[$below shadowsocks2022\e[m"
 echo -e "  \e[$number (•2)\e[m \e[$below VMESS MENU & WS\e[m    \e[$number (•6)\e[m \e[$below SOWDOWSOK\e[m"
 echo -e "  \e[$number (•3)\e[m \e[$below VLESS MENU & WS\e[m    \e[$number (•7)\e[m \e[$below MENU SOCKS5\e[m"  
-echo -e "  \e[$number (•4)\e[m \e[$below TROJAN MENU & WS\e[m   \e[$number (•8)\e[m \e[$below INSTALL UDP\e[m"
+echo -e "  \e[$number (•4)\e[m \e[$below TROJAN MENU & WS\e[m   \e[$number (•8)\e[m \e[$below WIREGUARD\e[m"
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
 echo -e "  \e[$back_text                        \e[30m[\e[$box VPS MENU\e[30m ]\e[1m                       \e[m"
 echo -e " \e[$line╘════════════════════════════════════════════════════════════╛\e[m"
@@ -162,7 +162,7 @@ echo -e "  \e[$number (•9)\e[m \e[$below SYSTEM MENU\e[m          \e[$number (
 echo -e "  \e[$number (10)\e[m \e[$below CHECK RUNNING\e[m        \e[$number (14)\e[m \e[$below RENEW CERT\e[m"
 echo -e "  \e[$number (11)\e[m \e[$below CHANGE PORT\e[m          \e[$number (15)\e[m \e[$below XRAY VERSION\e[m"
 echo -e "  \e[$number (12)\e[m \e[$below REBOOT VPS\e[m           \e[$number (16)\e[m \e[$below CLEAR LOG VPS\e[m"
-echo -e "  \e[$number (17)\e[m \e[$below MENU BUAT SEMUA XRAY\e[m"
+echo -e "  \e[$number (17)\e[m \e[$below MENU BUAT SEMUA XRAY\e[m \e[$number (18)\e[m \e[$below INSTALL UDP\e[m"
 echo -e ""
 echo -e "  \e[$below[Ctrl + C] For exit from main menu\e[m"
 echo -e " \e[$line╒════════════════════════════════════════════════════════════╕\e[m"
@@ -196,7 +196,7 @@ case $menu in
 7)
    socks
     ;;
-8)
+18)
   wget --load-cookies /tmp/cookies.txt ${UDPCORE} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
     ;;
 9)
@@ -225,6 +225,9 @@ case $menu in
     ;;
 17)
     allxray
+    ;;
+8)
+   menuwg
     ;;
 x)
     clear
