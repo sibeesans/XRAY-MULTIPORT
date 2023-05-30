@@ -285,7 +285,7 @@ echo -e ""
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "\e[1;33mSTATUS XRAY:\e[0m"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -294,7 +294,7 @@ else
 echo -e " Xray Vless tls          : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
