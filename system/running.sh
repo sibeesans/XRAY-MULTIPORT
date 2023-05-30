@@ -129,7 +129,7 @@ oovpn=$(systemctl status --now openvpn-server@server-tcp-1194 | grep Active | aw
 #status="$(systemctl status shadowsocks-libev.service --no-page)"
 #status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 #tls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-xray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+xray_service=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #vless_tls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #vless_nontls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -250,10 +250,10 @@ else
 fi
 
 # STATUS SERVICE  TLS 
-if [[ $xray_status == "running" ]]; then 
-   xray_v2ray=" ${GREEN}Running${NC} ( No Error )"
+if [[ $xray_service == "running" ]]; then 
+   xray_status=" ${GREEN}Running${NC} ( No Error )"
 else
-   xray_v2ray="${RED}  Not Running${NC}   ( Error )"
+   xray_status="${RED}  Not Running${NC}   ( Error )"
 fi
 
 # STATUS SERVICE NON TLS V2RAY
@@ -395,20 +395,20 @@ echo -e "❇️ Websocket OpenVPN(HTTP) :$status_openvpn3"
 echo -e "❇️ OHP-SSH                 :$status_ohp"
 echo -e "❇️ OHP-Dropbear            :$status_ohp2"
 echo -e "❇️ OHP-OpenVPN             :$status_ohp3"
-echo -e "❇️ XRAYS Vmess TLS         :$xray_v2ray"
-echo -e "❇️ XRAYS Vmess GRPC        :$xray_v2ray"
-echo -e "❇️ XRAYS Vmess None TLS    :$xray_v2ray"
-echo -e "❇️ XRAYS Vless TLS         :$xray_v2ray"
-echo -e "❇️ XRAYS Vless GRPC        :$xray_v2ray"
-echo -e "❇️ XRAYS Vless None TLS    :$xray_v2ray"
-echo -e "❇️ XRAYS Trojan TLS        :$xray_v2ray"
-echo -e "❇️ XRAYS Trojan None TLS   :$xray_v2ray"
-echo -e "❇️ XRAYS Trojan GRPC       :$xray_v2ray"
-echo -e "❇️ Sowdowsok TLS           :$xray_v2ray"
-echo -e "❇️ Sowdowsok None TLS      :$xray_v2ray"
-echo -e "❇️ Sowdowsok GRPC          :$xray_v2ray"
-echo -e "❇️ Sowdowsok 2022          :$xray_v2ray"
-echo -e "❇️ Sowdowsok5              :$xray_v2ray"
+echo -e "❇️ XRAYS Vmess TLS         :$xray_status"
+echo -e "❇️ XRAYS Vmess GRPC        :$xray_status"
+echo -e "❇️ XRAYS Vmess None TLS    :$xray_status"
+echo -e "❇️ XRAYS Vless TLS         :$xray_status"
+echo -e "❇️ XRAYS Vless GRPC        :$xray_status"
+echo -e "❇️ XRAYS Vless None TLS    :$xray_status"
+echo -e "❇️ XRAYS Trojan TLS        :$xray_status"
+echo -e "❇️ XRAYS Trojan None TLS   :$xray_status"
+echo -e "❇️ XRAYS Trojan GRPC       :$xray_status"
+echo -e "❇️ Sowdowsok TLS           :$xray_status"
+echo -e "❇️ Sowdowsok None TLS      :$xray_status"
+echo -e "❇️ Sowdowsok GRPC          :$xray_status"
+echo -e "❇️ Sowdowsok 2022          :$xray_status"
+echo -e "❇️ Sowdowsok5              :$xray_status"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
