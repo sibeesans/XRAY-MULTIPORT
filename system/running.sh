@@ -116,8 +116,8 @@ export tipeos2=$(uname -m)
 export Domen="$(cat /usr/local/etc/xray/domain)"
 
 # CHEK STATUS 
-oovpn2=$(systemctl status --now openvpn-server@server-udp-2200 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-oovpn=$(systemctl status --now openvpn-server@server-tcp-1194 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+oovpn2=$(systemctl show --now openvpn-server@server-udp-2200 --no-page | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+oovpn=$(systemctl show --now openvpn-server@server-tcp-1194 --no-page | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #status_openvp=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #status_ss_tls="$(systemctl show shadowsocks-libev-server@tls.service --no-page)"
 #ss_tls=$(echo "${status_ss_tls}" | grep 'ActiveState=' | cut -f2 -d=)
