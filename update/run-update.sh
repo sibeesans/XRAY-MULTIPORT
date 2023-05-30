@@ -105,8 +105,13 @@ wget -O menu "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/m
 wget -O add-host "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/system/add-host.sh"
 wget -O check-sc "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/system/running.sh"
 wget -O cert "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/cert.sh"
-wget -O trojaan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/menu/trojaan.sh"
-wget -O xraay "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/menu/xraay.sh"
+wget -O trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/trojan.sh"
+wget -O vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/vmess.sh"
+wget -O vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/vless.sh"
+wget -O sowdowsoks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/sowdowsoks/sowdowsoks.sh"
+wget -O sowdowsoks2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/sowdowsok2022/sowdowsoks2022.sh"
+wget -O socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/socks.sh"
+
 wget -O xp "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xp.sh"
 wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/change-port/port-xray.sh"
 wget -O themes "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/menu/themes.sh"
@@ -123,8 +128,12 @@ chmod +x menu
 chmod +x add-host
 chmod +x check-sc
 chmod +x cert
-chmod +x trojaan
-chmod +x xraay
+chmod +x trojan
+chmod +x vmess
+chmod +x vless
+chmod +x sowdowsoks
+chmod +x sowdowsok2022
+chmod +x socks
 chmod +x xp
 chmod +x port-xray
 chmod +x themes
