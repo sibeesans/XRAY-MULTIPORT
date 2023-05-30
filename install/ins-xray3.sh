@@ -58,7 +58,7 @@ exit 0
 fi
 clear
 sleep 1
-domain=$(cat /root/domain)
+domain=$(cat /usr/local/etc/xray/domain)
 apt install iptables iptables-persistent -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y
 apt install socat cron bash-completion ntpdate -y
@@ -784,20 +784,20 @@ systemctl restart nginx >/dev/null 2>&1
 
 cd /usr/bin
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Main Menu${NC}"
-wget -q -O vmess "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/menu/vmess.sh"
-wget -q -O vless "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/menu/vless.sh"
-wget -q -O trojan "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/menu/trojan.sh"
-wget -q -O shadowsocks "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/menu/shadowsocks.sh"
-wget -q -O shadowsocks2022 "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/menu/shadowsocks2022.sh"
-wget -q -O socks "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/menu/socks.sh"
-wget -q -O allxray "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/menu/allxray.sh"
+wget -q -O vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/vmess.sh"
+wget -q -O vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/vless.sh"
+wget -q -O trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/trojan.sh"
+wget -q -O shadowsocks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/shadowsocks.sh"
+wget -q -O shadowsocks2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/shadowsocks2022.sh"
+wget -q -O socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/socks.sh"
+wget -q -O allxray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/allxray.sh"
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Vmess${NC}"
-wget -q -O add-vmess "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/vmess/add-vmess.sh"
-wget -q -O del-vmess "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/vmess/del-vmess.sh"
-wget -q -O extend-vmess "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/vmess/extend-vmess.sh"
-wget -q -O trialvmess "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/vmess/trialvmess.sh"
-wget -q -O cek-vmess "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/vmess/cek-vmess.sh"
+wget -q -O add-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/add-vmess.sh"
+wget -q -O del-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/del-vmess.sh"
+wget -q -O extend-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/extend-vmess.sh"
+wget -q -O trialvmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/trialvmess.sh"
+wget -q -O cek-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/cek-vmess.sh"
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Vless${NC}"
 wget -q -O add-vless "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/vless/add-vless.sh"
@@ -892,10 +892,8 @@ chmod +x port-xray
 chmod +x certv2ray
 
 cd
-rm -f ins-xray3.sh
+rm -f ins-xray.sh
 mv /root/domain /usr/local/etc/xray/domain
 cp /usr/local/etc/xray/domain /etc/xray/domain
 sleep 1
 clear;
-
-
