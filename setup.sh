@@ -63,7 +63,7 @@ VALIDITY() {
     today=$(date -d "0 days" +"%Y-%m-%d")
     Exp1=$(curl https://raw.githubusercontent.com/${GitUser}/izinn/main/ipvps.conf | grep $MYIP | awk '{print $4}')
     if [[ $today < $Exp1 ]]; then
-        echo -e "\e[32mCongratulations! You are Allowed to use AUTOSCRIPT PelangiSenja..\e[0m"
+        echo -e "\e[32mCongratulations! You are Allowed to use AUTOSCRIPT JengkolOnline..\e[0m"
         sleep 5
     else
         echo -e "\e[31mYOUR SCRIPT HAS EXPIRED!\e[0m"
@@ -174,6 +174,12 @@ sleep 1
 wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 echo -e "\e[0;32mDONE INSTALLING SET-BR...\e[0m"
 clear
+#install wireguard 
+echo -e "\e[0;32mINSTALLING WIREGUARD...\e[0m"
+sleep 1
+wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/wireguard/wg.sh && chmod +x wg.sh && ./wg.sh
+echo -e "\e[0;32mDONE INSTALLING...\e[0m"
+clear
 # set time GMT +8
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 # install clouflare JQ
@@ -195,6 +201,7 @@ rm -f /root/ohp-dropbear.sh
 rm -f /root/ohp-ssh.sh
 rm -f /root/websocket.sh
 rm -f /root/set-br.sh
+rm -f /root/wg.sh
 # Colour Default
 echo "1;36m" > /etc/banner
 echo "30m" > /etc/box
@@ -206,6 +213,7 @@ echo "1;35m" > /etc/number
 echo 3d > /usr/bin/test
 #install wireguard
 #wget -q -O https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/wireguard/wg.sh && chmod +x wg.sh && ./wg.sh
+#rm -f /root/wg.sh
 # Version
 ver=$( curl https://raw.githubusercontent.com/${GitUser}/version/main/version.conf )
 history -c
