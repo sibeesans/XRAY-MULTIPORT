@@ -126,10 +126,10 @@ oovpn=$(systemctl status --now openvpn-server@server-tcp-1194 | grep Active | aw
 #status_ss_http="$(systemctl show shadowsocks-libev-server@http.service --no-page)"
 #ss_http=$(echo "${status_ss_http}" | grep 'ActiveState=' | cut -f2 -d=)
 #sssohtt=$(systemctl status shadowsocks-libev-server@*-http | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#status="$(systemctl show shadowsocks-libev.service --no-page)"
+#status="$(systemctl status shadowsocks-libev.service --no-page)"
 #status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 #tls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-xray_status=$(systemctl start xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+xray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #vless_tls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #vless_nontls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
