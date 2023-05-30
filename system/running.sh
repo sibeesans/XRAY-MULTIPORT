@@ -151,7 +151,7 @@ websocketssl_service=$(systemctl status ws-http.service | grep Active | awk '{pr
 #swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)
 #trgo="$(systemctl show trojan-go.service --no-page)"                                      
 #strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
-#sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wstls=$(systemctl status ws-stunnel.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsdrop=$(systemctl status ws-dropbear.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -257,11 +257,11 @@ else
 fi
 
 # STATUS SERVICE NON TLS V2RAY
-#if [[ $nontls_v2ray_status == "running" ]]; then 
-#   status_nontls_v2ray=" ${GREEN}Running ${NC}( No Error )${NC}"
-#else
-#   status_nontls_v2ray="${RED}  Not Running ${NC}  ( Error )${NC}"
-#fi
+if [[ $sswg == "running" ]]; then 
+   status_wg=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   status_wg="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
 
 # STATUS SERVICE VLESS HTTPS
 #if [[ $vless_tls_v2ray_status == "running" ]]; then
@@ -409,6 +409,7 @@ echo -e "❇️ Sowdowsok None TLS      :$xray_status"
 echo -e "❇️ Sowdowsok GRPC          :$xray_status"
 echo -e "❇️ Sowdowsok 2022          :$xray_status"
 echo -e "❇️ Sowdowsok5              :$xray_status"
+echo -e "❇️ Wireguard               :$status_wg"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
