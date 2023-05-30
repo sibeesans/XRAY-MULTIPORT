@@ -516,6 +516,8 @@ netfilter-persistent reload
 systemctl daemon-reload
 systemctl enable xray.service
 systemctl restart xray.service
+systemctl enable xray
+systemctl restart xray
 
 # download script
 cd /usr/bin
