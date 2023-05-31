@@ -99,18 +99,18 @@ cd /usr/bin
 wget -O update "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/update/update.sh"
 wget -O run-update "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/update/run-update.sh"
 wget -O message-ssh "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/update/message-ssh.sh"
-wget -O change-port "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/change.sh"
+#wget -O change-port "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/change.sh"
 wget -O system "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/menu/system.sh"
 wget -O menu "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/menu.sh"
 wget -O add-host "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/system/add-host.sh"
 wget -O check-sc "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/system/running.sh"
 wget -O cert "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/cert.sh"
-wget -O trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/trojan.sh"
-wget -O vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/vmess.sh"
-wget -O vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/vless.sh"
-wget -O sowdowsoks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/sowdowsoks/sowdowsoks.sh"
-wget -O sowdowsoks2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/sowdowsok2022/sowdowsoks2022.sh"
-wget -O socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/socks.sh"
+#wget -O trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/trojan.sh"
+#wget -O vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/vmess.sh"
+#wget -O vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/vless.sh"
+#wget -O sowdowsoks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/sowdowsoks/sowdowsoks.sh"
+#wget -O sowdowsoks2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/sowdowsok2022/sowdowsoks2022.sh"
+#wget -O socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/socks.sh"
 wget -O vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/vmess.sh"
 wget -O add-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/add-vmess.sh"
 wget -q -O del-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/del-vmess.sh"
@@ -187,19 +187,63 @@ chmod +x menu
 chmod +x add-host
 chmod +x check-sc
 chmod +x cert
-chmod +x trojan
-chmod +x vmess
-chmod +x vless
-chmod +x sowdowsoks
-chmod +x sowdowsok2022
-chmod +x socks
+#chmod +x trojan
+#chmod +x vmess
+#chmod +x vless
+#chmod +x sowdowsoks
+#chmod +x sowdowsok2022
+#chmod +x socks
 chmod +x xp
-chmod +x port-xray
+#chmod +x port-xray
 chmod +x themes
 chmod +x autobackup
 chmod +x backup
 chmod +x bckp
 chmod +x restore
+chmod +x add-vmess
+chmod +x del-vmess
+chmod +x extend-vmess
+chmod +x trialvmess
+chmod +x cek-vmess
+chmod +x add-vless
+chmod +x del-vless
+chmod +x extend-vless
+chmod +x trialvless
+chmod +x cek-vless
+chmod +x add-trojan
+chmod +x del-trojan
+chmod +x extend-trojan
+chmod +x trialtrojan
+chmod +x cek-trojan
+chmod +x add-ss
+chmod +x del-ss
+chmod +x extend-ss
+chmod +x trialss
+chmod +x cek-ss
+chmod +x add-ss2022
+chmod +x del-ss2022
+chmod +x extend-ss2022
+chmod +x trialss2022
+chmod +x cek-ss2022
+chmod +x add-socks
+chmod +x del-socks
+chmod +x extend-socks
+chmod +x trialsocks
+chmod +x cek-socks
+chmod +x add-xray
+chmod +x del-xray
+chmod +x extend-xray
+chmod +x trialxray
+chmod +x cek-xray
+chmod +x vmess
+chmod +x vless
+chmod +x trojan
+chmod +x sowdowsok
+chmod +x shadowsocks2022
+chmod +x socks
+chmod +x allxray
+chmod +x port-xray
+chmod +x certv2ray
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
