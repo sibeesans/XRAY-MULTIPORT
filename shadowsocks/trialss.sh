@@ -66,7 +66,7 @@ if [[ "$IP" = "" ]]; then
      domain=$(cat /usr/local/etc/xray/domain)
 else
      domain=$IP
-
+clear
 user=trial-`echo $RANDOM | head -c4`
 cipher="aes-256-gcm"
 uuid=$(cat /proc/sys/kernel/random/uuid)
