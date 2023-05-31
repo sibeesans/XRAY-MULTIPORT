@@ -36,45 +36,39 @@ MB='\e[35;1m'
 CB='\e[35;1m'
 WB='\e[37;1m'
 clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/etc/trojan-go/config.json")
-if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
+NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan-go/akun.conf")
+	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
+		echo ""
+		echo "You have no existing clients!"
+		exit 1
+	fi
+
+	echo ""
+	echo " Select the existing client you want to remove"
+	echo " Press CTRL+C to return"
+	echo " ==============================="
+	echo "     No  Expired   User"
+	grep -E "^### " "/etc/trojan-go/akun.conf" | cut -d ' ' -f 2-3 | nl -s ') '
+	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
+		if [[ ${CLIENT_NUMBER} == '1' ]]; then
+			read -rp "Select one client [1]: " CLIENT_NUMBER
+		else
+			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
+		fi
+	done
+CLIENT_NAME=$(grep -E "^### " "/etc/trojan-go/akun.conf" | cut -d ' ' -f 2-3 | sed -n "${CLIENT_NUMBER}"p)
+user=$(grep -E "^### " "/etc/trojan-go/akun.conf" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
+exp=$(grep -E "^### " "/etc/trojan-go/akun.conf" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+sed -i "/^### $user $exp/d" /etc/trojan-go/akun.conf
+sed -i '/^,"'"$user"'"$/d' /etc/trojan-go/config.json
+systemctl restart trojan-go.service
+service cron restart
 clear
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "             ${GB}Delete Trojan GO Account${NC}"
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "  ${YB}You have no existing clients!${NC}"
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-read -n 1 -s -r -p "Press any key to back on menu"
-trojango
-fi
-clear
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "             ${GB}Delete Trojan GO Account${NC}             "
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e " ${YB}User  Expired${NC}  "
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-grep -E "^#! " "/etc/trojan-go/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
 echo ""
-echo -e "${YB}tap enter to go back${NC}"
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-read -rp "Input Username : " user
-if [ -z $user ]; then
-trojango
-else
-exp=$(grep -wE "^#! $user" "/etc/trojan-go/config.json" | cut -d ' ' -f 3 | sort | uniq)
-sed -i "/^#! $user $exp/,/^},{/d" /usr/local/etc/xray/config.json
-rm -rf /var/www/html/trojango/trojango-$user.txt
-rm -rf /user/log-trojango-$user.txt
-systemctl restart xray
-clear
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "        ${GB}Trojan GO Account Success Deleted${NC}        "
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e " ${YB}Client Name :${NC} $user"
-echo -e " ${YB}Expired On  :${NC} $exp"
-echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo ""
-read -n 1 -s -r -p "Press any key to back on menu"
-clear
-trojango
-fi
+echo "============================"
+echo "  TrojanGo Account Deleted  "
+echo "============================"
+echo "Username : $user"
+echo "Expired  : $exp"
+echo "============================"
+echo "Script Mod By JengkolOnline"
