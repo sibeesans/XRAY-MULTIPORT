@@ -5,7 +5,7 @@ export NC="\e[0m"
 # // GIT USER
 export GitUser="Kulanbagong1"
 export MYIP=$(wget -qO- icanhazip.com);
-source /var/lib/premium-script/ipvps.conf
+#source /var/lib/premium-script/ipvps.conf
 # // VPS INFO
 clear
 Checkstart1=$(ip route | grep default | cut -d ' ' -f 3 | head -n 1);
