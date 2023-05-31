@@ -45,7 +45,7 @@ MYIP=$(wget -qO- ifconfig.me/ip);
 clear
 echo -e ""
 echo -e "   \e[$line════════════════════════════════════════\e[m"
-echo -e "   \e[$back_text             \e[30m═[\e[$box MENU Trojan GO\e[30m ]═          \e[m"
+echo -e "   \e[$back_text             \e[30m═[\e[$box MENU Trojan \e[30m ]═          \e[m"
 echo -e "   \e[$line════════════════════════════════════════\e[m"
 echo -e "   \e[$number (•1)\e[m \e[$below Create Account Trojan\e[m"
 echo -e "   \e[$number (•2)\e[m \e[$below Trial Account Trojan\e[m"
@@ -56,23 +56,23 @@ echo -e "   \e[$line════════════════════
 echo -e "   \e[$back_text \e[$box x)   MENU                             \e[m"
 echo -e "   \e[$line════════════════════════════════════════\e[m"
 echo -e "\e[$line"
-read -p "    Please Input Number  [1-17 or x] :  "  sys
+read -p "    Please Input Number  [1-5 or x] :  "  sys
 echo -e ""
 case $sys in
 1)
-add-tr
+add-trojan
 ;;
 2)
 trialtrojan
 ;;
 3)
-renew-tr
+extend-trojan
 ;;
 4)
-del-tr
+del-trojan
 ;;
 5)
-cek-tr
+cek-trojan
 ;;
 x)
 menu
