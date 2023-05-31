@@ -1,4 +1,4 @@
-wget https://github.com/${GitUser}/
+#wget https://github.com/${GitUser}/
 GitUser="Kulanbagong1"
 
 # // IZIN SCRIPT
