@@ -82,7 +82,7 @@ echo -e "${RB}——————————————————————
 echo -e "                 ${GB}Add Vmess Account${NC}                  "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 read -rp "User: " -e user
-CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
+CLIENT_EXISTS=$(grep -w $user /usr/local/etc/xray/config.json | wc -l)
 if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
