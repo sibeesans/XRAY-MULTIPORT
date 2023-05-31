@@ -112,8 +112,14 @@ export jam=`date -d "0 days" +"%X"`
 # // DNS PATH
 export tipeos2=$(uname -m)
 
-# // DOMAIN
-export Domen="$(cat /usr/local/etc/xray/domain)"
+#Domain
+IP=$(wget -qO- icanhazip.com);
+source /var/lib/premium-script/ipvps.conf
+if [[ "$IP" = "" ]]; then
+domain=$(cat /usr/local/etc/xray/domain)"
+else
+domain=$IP
+fi
 
 echo -e "\e[32mloading...\e[0m"
 clear
