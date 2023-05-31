@@ -104,76 +104,76 @@ iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
-cd /usr/bin
+#cd /usr/bin/
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Vmess${NC}"
-wget -O vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/vmess.sh"
-wget -O add-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/add-vmess.sh"
-wget -q -O del-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/del-vmess.sh"
-wget -O extend-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/extend-vmess.sh"
-wget -O trialvmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/trialvmess.sh"
-wget -O cek-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/cek-vmess.sh"
+wget -O /usr/bin/vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/vmess.sh"
+wget -O /usr/bin/add-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/add-vmess.sh"
+wget -O /usr/bin/del-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/del-vmess.sh"
+wget -O /usr/bin/extend-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/extend-vmess.sh"
+wget -O /usr/bin/trialvmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/trialvmess.sh"
+wget -O /usr/bin/cek-vmess "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vmess/cek-vmess.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Vless${NC}"
-wget -O vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/vless.sh"
-wget -O add-vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/add-vless.sh"
-wget -O del-vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/del-vless.sh"
-wget -O extend-vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/extend-vless.sh"
-wget -O trialvless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/trialvless.sh"
-wget -O cek-vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/cek-vless.sh"
+wget -O /usr/bin/vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/vless.sh"
+wget -O /usr/bin/add-vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/add-vless.sh"
+wget -O /usr/bin/del-vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/del-vless.sh"
+wget -O /usr/bin/extend-vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/extend-vless.sh"
+wget -O /usr/bin/trialvless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/trialvless.sh"
+wget -O /usr/bin/cek-vless "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/vless/cek-vless.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Trojan${NC}"
-wget -O trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/trojan.sh"
-wget -O add-trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/add-trojan.sh"
-wget -O del-trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/del-trojan.sh"
-wget -O extend-trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/extend-trojan.sh"
-wget -O trialtrojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/trialtrojan.sh"
-wget -O cek-trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/cek-trojan.sh"
+wget -O /usr/bin/trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/trojan.sh"
+wget -O /usr/bin/add-trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/add-trojan.sh"
+wget -O /usr/bin/del-trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/del-trojan.sh"
+wget -O /usr/bin/extend-trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/extend-trojan.sh"
+wget -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/trialtrojan.sh"
+wget -O /usr/bin/cek-trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/cek-trojan.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Shadowsocks${NC}"
-wget -O sowdowsok "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowshoks/sowdowsok.sh"
-wget -O add-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/add-ss.sh"
-wget -O del-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/del-ss.sh"
-wget -O extend-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/extend-ss.sh"
-wget -O trialss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/trialss.sh"
-wget -O cek-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/cek-ss.sh"
+wget -O /usr/bin/sowdowsok "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowshoks/sowdowsok.sh"
+wget -O /usr/binadd-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/add-ss.sh"
+wget -O /usr/bindel-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/del-ss.sh"
+wget -O /usr/bin/extend-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/extend-ss.sh"
+wget -O /usr/bin/trialss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/trialss.sh"
+wget -O /usr/bin/cek-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/cek-ss.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Shadowsocks 2022${NC}"
-wget -O shadowsocks2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/shadowsocks2022.sh"
-wget -O add-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/add-ss2022.sh"
-wget -O del-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/del-ss2022.sh"
-wget -O extend-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/extend-ss2022.sh"
-wget -O trialss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/trialss2022.sh"
-wget -O cek-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/cek-ss2022.sh"
+wget -O /usr/bin/shadowsocks2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/shadowsocks2022.sh"
+wget -O /usr/bin/add-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/add-ss2022.sh"
+wget -O /usr/bin/del-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/del-ss2022.sh"
+wget -O /usr/bin/extend-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/extend-ss2022.sh"
+wget -O /usr/bin/trialss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/trialss2022.sh"
+wget -O /usr/bin/cek-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/cek-ss2022.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Socks5${NC}"
-wget -O socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/socks.sh"
-wget -O add-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/add-socks.sh"
-wget -O del-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/del-socks.sh"
-wget -O extend-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/extend-socks.sh"
-wget -O trialsocks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/trialsocks.sh"
-wget -O cek-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/cek-socks.sh"
+wget -O /usr/bin/socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/socks.sh"
+wget -O /usr/bin/add-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/add-socks.sh"
+wget -O /usr/bin/del-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/del-socks.sh"
+wget -O /usr/bin/extend-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/extend-socks.sh"
+wget -O /usr/bin/trialsocks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/trialsocks.sh"
+wget -O /usr/bin/cek-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/cek-socks.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu All Xray${NC}"
-wget -O allxray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/allxray.sh"
-wget -O add-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/add-xray.sh"
-wget -O del-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/del-xray.sh"
-wget -O extend-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/extend-xray.sh"
-wget -O trialxray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/trialxray.sh"
-wget -O cek-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/cek-xray.sh"
+wget -O /usr/bin/allxray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/allxray.sh"
+wget -O /usr/bin/add-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/add-xray.sh"
+wget -O /usr/bin/del-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/del-xray.sh"
+wget -O /usr/bin/extend-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/extend-xray.sh"
+wget -O /usr/bin/trialxray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/trialxray.sh"
+wget -O /usr/bin/cek-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/cek-xray.sh"
 #sleep 0.5
 #Prot
-wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/change-port/port-xray.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/cert.sh"
+wget -O /usr/bin/port-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/change-port/port-xray.sh"
+wget -O /usr/bin/certv2ray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/cert.sh"
 
 #chmod
-chmod +x add-vmess
-chmod +x del-vmess
-chmod +x extend-vmess
-chmod +x trialvmess
-chmod +x cek-vmess
-chmod +x add-vless
-chmod +x del-vless
+chmod +x /usr/bin/add-vmess
+chmod +x /usr/bin/del-vmess
+chmod +x /usr/bin/extend-vmess
+chmod +x /usr/bin/trialvmess
+chmod +x /usr/bin/cek-vmess
+chmod +x /usr/bin/add-vless
+chmod +x /usr/bin/del-vless
 chmod +x extend-vless
 chmod +x trialvless
 chmod +x cek-vless
