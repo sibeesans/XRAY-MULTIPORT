@@ -79,14 +79,14 @@ clear
 #domain=$(cat /usr/local/etc/xray/domain)
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "                 ${GB}Add Socks5 Account${NC}                 "
+echo -e "                 ${GB}Add Sowdowsoks Account${NC}                 "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 read -rp "Username: " -e user
 CLIENT_EXISTS=$(grep -w $user /usr/local/etc/xray/config.json | wc -l)
 if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "                 ${GB}Add Socks5 Account${NC}                 "
+echo -e "                 ${GB}Add Sowdowsoks Account${NC}                 "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 echo -e "${YB}A client with the specified name was already created, please choose another name.${NC}"
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
@@ -100,7 +100,7 @@ CLIENT_EXISTS=$(grep -w $pass /usr/local/etc/xray/config.json | wc -l)
 if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "                 ${GB}Add Socks5 Account${NC}                 "
+echo -e "                 ${GB}Add Sowdowsoks Account${NC}                 "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 echo -e ""
 echo -e "${YB}A client with the specified name was already created, please choose another name.${NC}"
@@ -192,7 +192,7 @@ CITY=$(cat /usr/local/etc/xray/city)
 systemctl restart xray
 clear
 echo -e "————————————————————————————————————————————————————" | tee -a /user/log-socks5-$user.txt
-echo -e "                   Socks5 Account                   " | tee -a /user/log-socks5-$user.txt
+echo -e "                   Sowdowsoks Account                   " | tee -a /user/log-socks5-$user.txt
 echo -e "————————————————————————————————————————————————————" | tee -a /user/log-socks5-$user.txt
 echo -e "Username      : ${user}" | tee -a /user/log-socks5-$user.txt
 echo -e "Password      : ${pass}" | tee -a /user/log-socks5-$user.txt
