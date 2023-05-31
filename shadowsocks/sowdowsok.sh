@@ -47,11 +47,11 @@ echo -e ""
 echo -e "   \e[$line════════════════════════════════════════\e[m"
 echo -e "   \e[$back_text             \e[30m═[\e[$box MENU Sowdowsok\e[30m ]═          \e[m"
 echo -e "   \e[$line════════════════════════════════════════\e[m"
-echo -e "   \e[$number (•1)\e[m \e[$below Create Account Sowdowsok\e[m"
-echo -e "   \e[$number (•2)\e[m \e[$below Trial Account Sowdowsok\e[m"
-echo -e "   \e[$number (•3)\e[m \e[$below Extending Account Sowdowsok Active Life\e[m"
-echo -e "   \e[$number (•4)\e[m \e[$below Delete Account Sowdowsok\e[m"
-echo -e "   \e[$number (•5)\e[m \e[$below Check User Login Sowdowsok\e[m"
+echo -e " ${GB}[1]${NC} ${YB}Create Account Shadowsocks${NC} "
+echo -e " ${GB}[2]${NC} ${YB}Trial Account Shadowsocks${NC} "
+echo -e " ${GB}[3]${NC} ${YB}Extend Account Shadowsocks${NC} "
+echo -e " ${GB}[4]${NC} ${YB}Delete Account Shadowsocks${NC} "
+echo -e " ${GB}[5]${NC} ${YB}Check User Login${NC} "
 echo -e "   \e[$line════════════════════════════════════════\e[m"
 echo -e "   \e[$back_text \e[$box x)   MENU                             \e[m"
 echo -e "   \e[$line════════════════════════════════════════\e[m"
@@ -60,16 +60,16 @@ read -p "    Please Input Number  [1-17 or x] :  "  sys
 echo -e ""
 case $sys in
 1)
-add-ssws
+add-ss
 ;;
 2)
-trialssws
+trialss
 ;;
 3)
-renew-ssws
+extend-ss
 ;;
 4)
-del-ssws
+del-ss
 ;;
 5)
 cek-ss
