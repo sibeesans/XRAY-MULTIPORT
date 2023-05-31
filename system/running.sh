@@ -308,7 +308,7 @@ else
 echo -e " Xray Vless tls          : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray --no-page)"
+status="$(systemctl statust xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -326,7 +326,7 @@ else
 echo -e " Xray Vless gRPC         : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl statust xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -335,7 +335,7 @@ else
 echo -e " Xray Vmess Tls          : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl show xray@service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -344,7 +344,7 @@ else
 echo -e " Xray Vmess None Tls     : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl status xray.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -353,7 +353,7 @@ else
 echo -e " Xray Vmess gRPC         : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show xray.service --no-page)"
+status="$(systemctl status xray --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
