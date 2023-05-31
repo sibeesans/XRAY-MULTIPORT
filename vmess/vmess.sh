@@ -43,9 +43,9 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
 clear
-echo -e "${RB}————————————————————————————————————————————————————————${NC}"
-echo -e "               ${GB}----- [ Vmess Menu ] -----${NC}               "
-echo -e "${RB}————————————————————————————————————————————————————————${NC}"
+echo -e "   \e[$line════════════════════════════════════════\e[m"
+echo -e "   \e[$back_text             \e[30m═[\e[$box MENU XRAY/VLESS\e[30m ]═          \e[m"
+echo -e "   \e[$line════════════════════════════════════════\e[m"
 echo -e ""
 echo -e " ${GB}[1]${NC} ${YB}Create Account Vmess${NC} "
 echo -e " ${GB}[2]${NC} ${YB}Trial Account Vmess${NC} "
