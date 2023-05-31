@@ -27,11 +27,11 @@ clear
 #Domain
 IP=$(wget -qO- icanhazip.com);
 source /var/lib/premium-script/ipvps.conf
-if [[ "$IP" = "" ]]; then
+#if [[ "$IP" = "" ]]; then
 domain=$(cat /usr/local/etc/xray/domain)"
-else
+#else
 domain=$IP
-fi
+#fi
 export ITAM='\033[0;30m'
 echo -e "$ITAM"
 export NAMAISP=$( curl -s ipinfo.io/org | cut -d " " -f 2-10  )
