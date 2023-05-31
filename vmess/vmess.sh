@@ -43,43 +43,42 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
 clear
+echo -e "${RB}————————————————————————————————————————————————————————${NC}"
+echo -e "               ${GB}----- [ Vmess Menu ] -----${NC}               "
+echo -e "${RB}————————————————————————————————————————————————————————${NC}"
 echo -e ""
-echo -e "   \e[$line════════════════════════════════════════\e[m"
-echo -e "   \e[$back_text             \e[30m═[\e[$box MENU XRAY/VLESS\e[30m ]═          \e[m"
-echo -e "   \e[$line════════════════════════════════════════\e[m"
-echo -e "   \e[$number (•1)\e[m \e[$below Create Account XRAY Vmess Websocket\e[m"
-echo -e "   \e[$number (•2)\e[m \e[$below Trial Account XRAY Vmess Websocket\e[m"
-echo -e "   \e[$number (•3)\e[m \e[$below Extending Account XRAY Vmess Websocket Active Life\e[m"
-echo -e "   \e[$number (•4)\e[m \e[$below Delete Account XRAY Vmess Websocket\e[m"
-echo -e "   \e[$number (•5)\e[m \e[$below Check User Login XRAY Vmess Websocket\e[m"
-echo -e "   \e[$line════════════════════════════════════════\e[m"
-echo -e "   \e[$back_text \e[$box x)   MENU                             \e[m"
-echo -e "   \e[$line════════════════════════════════════════\e[m"
-echo -e "\e[$line"
-read -p "    Please Input Number  [1-17 or x] :  "  sys
+echo -e " ${GB}[1]${NC} ${YB}Create Account Vmess${NC} "
+echo -e " ${GB}[2]${NC} ${YB}Trial Account Vmess${NC} "
+echo -e " ${GB}[3]${NC} ${YB}Extend Account Vmess${NC} "
+echo -e " ${GB}[4]${NC} ${YB}Delete Account Vmess${NC} "
+echo -e " ${GB}[5]${NC} ${YB}Check User Login${NC} "
+echo -e ""
+echo -e " ${GB}[0]${NC} ${YB}Back To Menu${NC}"
+echo -e ""
+echo -e "${RB}———————————————————————————————————————————————————————${NC}"
+echo -e ""
+read -p " Select menu :  "  sys
 echo -e ""
 case $sys in
-1)
-add-ws
+1) clear  
+   add-vmess 
+   ;;
+2) clear  t
+   rialvmess  
+   ;;
+3) clear  
+   extend-vmess  
+   ;;
+4) clear  
+   del-vmess  
+   ;;
+5) clear  
+   cek-vmess  
+   ;;
+0) clear  
+   menu  
+   ;;
+x) exit 
 ;;
-2)
-trialvmess
-;;
-3)
-renew-ws
-;;
-4)
-del-ws
-;;
-5)
-cek-vless
-;;
-x)
-menu
-;;
-*)
-echo "Please enter an correct number"
-sleep 1
-system
-;;
+*) echo -e "salah tekan " ; sleep 1 ; vmess ;;
 esac
