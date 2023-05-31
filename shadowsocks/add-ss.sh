@@ -77,7 +77,7 @@ MB='\e[35;1m'
 CB='\e[35;1m'
 WB='\e[37;1m'
 clear
-domain=$(cat /usr/local/etc/xray/domain)
+#domain=$(cat /usr/local/etc/xray/domain)
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 echo -e "               ${GB}Add Shadowsocks Account${NC}              "
