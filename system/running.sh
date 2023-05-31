@@ -30,7 +30,7 @@ source /var/lib/premium-script/ipvps.conf
 #if [[ "$IP" = "" ]]; then
 domain=$(cat /usr/local/etc/xray/domain)"
 #else
-domain=$IP
+#domain=$IP
 #fi
 export ITAM='\033[0;30m'
 echo -e "$ITAM"
