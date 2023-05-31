@@ -131,7 +131,7 @@ wget -O trialtrojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT
 wget -O cek-trojan "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/trojan/cek-trojan.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Shadowsocks${NC}"
-wget -O shadowsocks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowshoks/shadowsocks.sh"
+wget -O sowdowsok "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowshoks/sowdowsok.sh"
 wget -O add-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/add-ss.sh"
 wget -O del-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/del-ss.sh"
 wget -O extend-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/extend-ss.sh"
@@ -205,7 +205,7 @@ chmod +x cek-xray
 chmod +x vmess
 chmod +x vless
 chmod +x trojan
-chmod +x shadowsocks
+chmod +x sowdowsok
 chmod +x shadowsocks2022
 chmod +x socks
 chmod +x allxray
