@@ -105,7 +105,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "Remarks    : ${user}" | tee -a /etc/log-create-user.log
 echo -e "IP/Host    : ${MYIP}" | tee -a /etc/log-create-user.log
 echo -e "Address    : ${domain}" | tee -a /etc/log-create-user.log
-echo -e "Port       : ${trgo}" | tee -a /etc/log-create-user.log
+echo -e "Port       : 443" | tee -a /etc/log-create-user.log
 echo -e "Key        : ${uuid}" | tee -a /etc/log-create-user.log
 echo -e "Encryption : none" | tee -a /etc/log-create-user.log
 echo -e "Path       : /trojango" | tee -a /etc/log-create-user.log
