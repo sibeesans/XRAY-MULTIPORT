@@ -476,11 +476,40 @@ END
 #xray.conf
 #wget -q -O /etc/nginx/conf.d/xray.conf https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xray.conf
 
-#sevice
-echo -e "$yell[SERVICE]$NC Restart All service"
-systemctl daemon-reload
-sleep 1
-echo -e "[ ${green}ok${NC} ] Enable & restart xray "
+# // IPTABLE TCP 
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 10085 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 14016 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 23456 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 25432 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 25432 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 24456 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 31234 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 33456 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 30310 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
+
+
+# // IPTABLE UDP
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 10085 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 14016 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 23456 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 25432 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 25432 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 24456 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 31234 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 33456 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 30310 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
+iptables-save > /etc/iptables.up.rules
+iptables-restore -t < /etc/iptables.up.rules
+netfilter-persistent save
+netfilter-persistent reload
+
+# // ENABLE XRAY TCP XTLS 80/443
 systemctl daemon-reload
 systemctl enable xray.service
 systemctl restart xray.service
