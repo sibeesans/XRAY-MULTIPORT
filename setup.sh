@@ -271,6 +271,7 @@ echo "   - Shadowsocks 2022 GRPC   : 443" | tee -a log-install.txt
 echo "   - Shadowsocks5 TLS        : 443" | tee -a log-install.txt
 echo "   - Shadowsocks5 none TLS   : 80" | tee -a log-install.txt
 echo "   - Shadowsocks5 gRPC       : 443" | tee -a log-install.txt
+echo "   - Trojan GO               : 443" | tee -a log-install.txt
 #echo "   - Wireguard               : 7070"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "    [INFORMASI CLASH FOR ANDROID (YAML)]"  | tee -a log-install.txt
