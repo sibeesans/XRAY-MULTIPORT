@@ -474,7 +474,7 @@ $uuid
 END
 
 #xray.conf
-wget -q -O /etc/nginx/conf.d/xray.conf https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xray.conf
+#wget -q -O /etc/nginx/conf.d/xray.conf https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/xray.conf
 
 #sevice
 echo -e "$yell[SERVICE]$NC Restart All service"
