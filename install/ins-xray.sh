@@ -81,7 +81,7 @@ clear;
 # set uuid
 uuid=$(cat /proc/sys/kernel/random/uuid)
 # // JSON All
-cat> /usr/local/etc/xray/config.json << END
+cat > /etc/xray/config.json << END
 {
   "log" : {
     "access": "/var/log/xray/access.log",
@@ -555,28 +555,28 @@ wget -O trialss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/mai
 wget -O cek-ss "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks/cek-ss.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Shadowsocks 2022${NC}"
-wget -O shadowsocks2022 "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/shadowsocks2022/shadowsocks2022.sh"
-wget -O add-ss2022 "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/shadowsocks2022/add-ss2022.sh"
-wget -O del-ss2022 "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/shadowsocks2022/del-ss2022.sh"
-wget -O extend-ss2022 "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/shadowsocks2022/extend-ss2022.sh"
-wget -O trialss2022 "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/shadowsocks2022/trialss2022.sh"
-wget -O cek-ss2022 "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/shadowsocks2022/cek-ss2022.sh"
+wget -O shadowsocks2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/shadowsocks2022.sh"
+wget -O add-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/add-ss2022.sh"
+wget -O del-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/del-ss2022.sh"
+wget -O extend-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/extend-ss2022.sh"
+wget -O trialss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/trialss2022.sh"
+wget -O cek-ss2022 "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/shadowsocks2022/cek-ss2022.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Socks5${NC}"
-wget -O socks "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/socks/socks.sh"
-wget -O add-socks "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/socks/add-socks.sh"
-wget -O del-socks "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/socks/del-socks.sh"
-wget -O extend-socks "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/socks/extend-socks.sh"
-wget -O trialsocks "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/socks/trialsocks.sh"
-wget -O cek-socks "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/socks/cek-socks.sh"
+wget -O socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/socks.sh"
+wget -O add-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/add-socks.sh"
+wget -O del-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/del-socks.sh"
+wget -O extend-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/extend-socks.sh"
+wget -O trialsocks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/trialsocks.sh"
+wget -O cek-socks "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/socks/cek-socks.sh"
 #sleep 0.5
 #echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu All Xray${NC}"
-wget -O allxray "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/allxray/allxray.sh"
-wget -O add-xray "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/allxray/add-xray.sh"
-wget -O del-xray "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/allxray/del-xray.sh"
-wget -O extend-xray "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/allxray/extend-xray.sh"
-wget -O trialxray "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/allxray/trialxray.sh"
-wget -O cek-xray "https://raw.githubusercontent.com/Kulanbagong1/XRAY-MULTIPORT/main/allxray/cek-xray.sh"
+wget -O allxray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/allxray.sh"
+wget -O add-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/add-xray.sh"
+wget -O del-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/del-xray.sh"
+wget -O extend-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/extend-xray.sh"
+wget -O trialxray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/trialxray.sh"
+wget -O cek-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/allxray/cek-xray.sh"
 #sleep 0.5
 #Prot
 wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/change-port/port-xray.sh"
