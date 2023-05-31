@@ -41,7 +41,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/usr/local/etc/xray/config.json")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 clear
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "             ${GB}Extend Shadowsocks Account${NC}     "
+echo -e "             ${GB}Extend Trojan GO Account${NC}     "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 echo -e "  ${YB}You have no existing clients!${NC}"
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
@@ -51,7 +51,7 @@ shadowsocks
 fi
 clear
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "             ${GB}Extend Shadowsocks Account${NC}     "
+echo -e "             ${GB}Extend Trojan GO Account${NC}     "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 echo -e " ${YB}User  Expired${NC}  "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
@@ -75,7 +75,7 @@ sed -i "/#! $user/c\#! $user $exp4" /usr/local/etc/xray/config.json
 systemctl restart xray
 clear
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "        ${GB}Shadowsocks Account Success Extended${NC}        "
+echo -e "        ${GB}Trojan GO Account Success Extended${NC}        "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 echo -e " ${YB}Client Name :${NC} $user"
 echo -e " ${YB}Expired On  :${NC} $exp4"
@@ -83,5 +83,5 @@ echo -e "${RB}——————————————————————
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 clear
-shadowsocks
+trojango
 fi
