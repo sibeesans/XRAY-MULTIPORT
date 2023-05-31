@@ -25,7 +25,7 @@ fi
 echo -e "\e[32mloading...\e[0m"
 clear
 #Domain
-IP=$(wget -qO- icanhazip.com);
+#IP=$(wget -qO- icanhazip.com);
 source /var/lib/premium-script/ipvps.conf
 #if [[ "$IP" = "" ]]; then
 domain=$(cat /usr/local/etc/xray/domain)"
