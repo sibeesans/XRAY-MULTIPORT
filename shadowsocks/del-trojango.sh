@@ -36,39 +36,39 @@ MB='\e[35;1m'
 CB='\e[35;1m'
 WB='\e[37;1m'
 clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/usr/local/etc/xray/config.json")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/etc/trojan-go/config.json")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 clear
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "             ${GB}Delete Shadowsocks Account${NC}"
+echo -e "             ${GB}Delete Trojan GO Account${NC}"
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 echo -e "  ${YB}You have no existing clients!${NC}"
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 read -n 1 -s -r -p "Press any key to back on menu"
-shadowsocks
+trojango
 fi
 clear
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "             ${GB}Delete Shadowsocks Account${NC}             "
+echo -e "             ${GB}Delete Trojan GO Account${NC}             "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 echo -e " ${YB}User  Expired${NC}  "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-grep -E "^#! " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
+grep -E "^#! " "/etc/trojan-go/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
 echo ""
 echo -e "${YB}tap enter to go back${NC}"
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 read -rp "Input Username : " user
 if [ -z $user ]; then
-shadowsocks
+trojango
 else
-exp=$(grep -wE "^#! $user" "/usr/local/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+exp=$(grep -wE "^#! $user" "/etc/trojan-go/config.json" | cut -d ' ' -f 3 | sort | uniq)
 sed -i "/^#! $user $exp/,/^},{/d" /usr/local/etc/xray/config.json
-rm -rf /var/www/html/shadowsocks/shadowsocks-$user.txt
-rm -rf /user/log-ss-$user.txt
+rm -rf /var/www/html/trojango/trojango-$user.txt
+rm -rf /user/log-trojango-$user.txt
 systemctl restart xray
 clear
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
-echo -e "        ${GB}Shadowsocks Account Success Deleted${NC}        "
+echo -e "        ${GB}Trojan GO Account Success Deleted${NC}        "
 echo -e "${RB}————————————————————————————————————————————————————${NC}"
 echo -e " ${YB}Client Name :${NC} $user"
 echo -e " ${YB}Expired On  :${NC} $exp"
@@ -76,5 +76,5 @@ echo -e "${RB}——————————————————————
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 clear
-shadowsocks
+trojango
 fi
