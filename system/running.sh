@@ -24,6 +24,14 @@ fi
 # // VPS ISP INFORMATION
 echo -e "\e[32mloading...\e[0m"
 clear
+#Domain
+IP=$(wget -qO- icanhazip.com);
+source /var/lib/premium-script/ipvps.conf
+if [[ "$IP" = "" ]]; then
+domain=$(cat /usr/local/etc/xray/domain)"
+else
+domain=$IP
+fi
 export ITAM='\033[0;30m'
 echo -e "$ITAM"
 export NAMAISP=$( curl -s ipinfo.io/org | cut -d " " -f 2-10  )
@@ -113,13 +121,13 @@ export jam=`date -d "0 days" +"%X"`
 export tipeos2=$(uname -m)
 
 #Domain
-IP=$(wget -qO- icanhazip.com);
-source /var/lib/premium-script/ipvps.conf
-if [[ "$IP" = "" ]]; then
-domain=$(cat /usr/local/etc/xray/domain)"
-else
-domain=$IP
-fi
+#IP=$(wget -qO- icanhazip.com);
+#source /var/lib/premium-script/ipvps.conf
+#if [[ "$IP" = "" ]]; then
+#domain=$(cat /usr/local/etc/xray/domain)"
+#else
+#domain=$IP
+#fi
 
 echo -e "\e[32mloading...\e[0m"
 clear
