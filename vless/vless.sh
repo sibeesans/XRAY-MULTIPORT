@@ -66,7 +66,7 @@ add-vless
 trialvless
 ;;
 3)
-renew-vless
+extend-vless
 ;;
 4)
 del-vless
