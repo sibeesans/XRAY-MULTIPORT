@@ -5,13 +5,7 @@ GitUser="Kulanbagong1"
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
 #Domain
-IP=$(wget -qO- icanhazip.com);
-source /var/lib/premium-script/ipvps.conf
-if [[ "$IP" = "" ]]; then
 domain=$(cat /usr/local/etc/xray/domain)
-else
-domain=$IP
-fi
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10)
 CITY=$(curl -s ipinfo.io/city)
 WKT=$(curl -s ipinfo.io/timezone)
