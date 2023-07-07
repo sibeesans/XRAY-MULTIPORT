@@ -1,6 +1,6 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
-GitUser="Kulanbagong1"
+GitUser="sibeesans"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
