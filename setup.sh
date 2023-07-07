@@ -1,6 +1,6 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
-GitUser="Kulanbagong1"
+GitUser="sibeesans"
 # Color Validation
 Lred='\e[1;91m'
 Lgreen='\e[92m'
@@ -21,14 +21,14 @@ echo ''
 echo "                                                              "
 echo -e "$Lyellow                ⚡ PREMIUM SPEED SCRIPT ⚡"$NC
 echo -e "$green.........................................................."$NC
-echo -e "$Lyellow                  Autoscript By JengkolOnline"$NC
+echo -e "$Lyellow                  Autoscript By sibeesans"$NC
 echo -e "$Lyellow                    CONTACT TELEGRAM"$NC
-echo -e "$Lyellow               https://t.me/Jengkol_Online"$NC
+echo -e "$Lyellow               https://t.me/sibeesans"$NC
 echo -e "$green.........................................................."$NC
 echo ''
-echo -e "$Lyellow                       Wait 6 Seconds!"$NC
+echo -e "$Lyellow                       Wait 5 Seconds!"$NC
 echo -e "$green.........................................................."$NC
-sleep 6
+sleep 5
 clear
 if [ "${EUID}" -ne 0 ]; then
     echo "You need to run this script as root"
@@ -63,7 +63,7 @@ VALIDITY() {
     today=$(date -d "0 days" +"%Y-%m-%d")
     Exp1=$(curl https://raw.githubusercontent.com/${GitUser}/izinn/main/ipvps.conf | grep $MYIP | awk '{print $4}')
     if [[ $today < $Exp1 ]]; then
-        echo -e "\e[32mCongratulations! You are Allowed to use AUTOSCRIPT JengkolOnline..\e[0m"
+        echo -e "\e[32mCongratulations! You are Allowed to use AUTOSCRIPT sibeesans..\e[0m"
         sleep 5
     else
         echo -e "\e[31mYOUR SCRIPT HAS EXPIRED!\e[0m"
