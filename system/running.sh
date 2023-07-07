@@ -3,7 +3,7 @@ export green="\e[0;32m"
 export NC="\e[0m"
 
 # // GIT USER
-export GitUser="Kulanbagong1"
+export GitUser="sibeesans"
 export MYIP=$(wget -qO- icanhazip.com);
 #source /var/lib/premium-script/ipvps.conf
 # // VPS INFO
