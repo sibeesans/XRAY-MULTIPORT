@@ -6,7 +6,7 @@ sleep 0.5
 cd
 
 # // GIT USER
-GitUser="Kulanbagong1"
+GitUser="sibeesans"
 namafolder="websocket-python"
 
 # // SYSTEM WEBSOCKET HTTPS 443
