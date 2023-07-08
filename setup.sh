@@ -19,7 +19,7 @@ echo ''
 clear
 echo ''
 echo "                                                              "
-echo -e "$Lyellow                ⚡ PREMIUM SPEED SCRIPT ⚡"$NC
+echo -e "$Lyellow                ⚡ ajojin ala ala ajojing ⚡"$NC
 echo -e "$green.........................................................."$NC
 echo -e "$Lyellow                  Autoscript By sibeesans"$NC
 echo -e "$Lyellow                    CONTACT TELEGRAM"$NC
@@ -152,7 +152,7 @@ clear
 #install Xray
 echo -e "\e[0;32mINSTALLING XRAY CORE...\e[0m"
 sleep 1
-wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/install/ins-xray3.sh && chmod +x ins-xray.sh && screen -S ins-xray ./ins-xray.sh
+wget https://raw.githubusercontent.com/${GitUser}/XRAY-MULTIPORT/main/install/ins-xray.sh && chmod +x ins-xray.sh && screen -S ins-xray ./ins-xray.sh
 echo -e "\e[0;32mDONE INSTALLING XRAY CORE\e[0m"
 clear
 #install ohp-server
